@@ -1,0 +1,20 @@
+\b;Objective
+Your task is to eliminate all hostile lifeforms in the area. It is a direct order from mission control and the crisis management department. The decision was made upon analysis of the data from the black box and organic matter, that you retrieved earlier.
+
+The data received from black box indicates that the ship belonging to previous expedition had been critically damaged shortly before take-off. The data from the captain's logs indicates that they were evacuating from the planet but were not aware of the damage, as the ants responsible for the damage performed their attack unseen. Prior to this incident ants and spiders began to pick off robots that were wandering alone around the island. This was a serious issue for the crew, and robots were programmed to move in larger groups to be able to defend themselves. That did not help, as only few days later a column of expedition's robots was ambushed by spiders in a steep valley. The crew lost most of their offensive forces there. The spiders have also traced their concealed robot factory and tore it down. The crew had some TNT with them but it remains unclear if they managed to use it. Stripped of all resources and robots, they struggled to evacuate. This is the first time giant spiders and ants show off such a complex reasoning and intelligence combined with agression. It is a result of a rare mutation. The data received from the organic matter you collected proves this. It also enabled us to trace the nest of these most agressive and intelligent individuals. We belive that there is only one hive. You are be deployed in its proximity.
+
+You still have one organic matter, you may use it to develop organic cannon.
+
+The reports indicate that there was a small outpost established on the pleateau to the south of your location. You may want to investigate that.
+
+The planet:
+Aria is a planet that has its own ocean of crystal-clear water. The surface consists mainy of silicon and salts. The planet is relatively cold and the atmosphere is not dense. Some organisms have adapted to live there.
+
+Other notes:
+Some resources should be available near your landing spot.
+Be wary of the roaming aliens, some of them may take a role of scouts and try to sneak up on your base when you least expect it. Flying robots don't work well in this area too. The atmosphere is not dense, and it may be a problem for flying robots. You'll probably want to rely on robots with tracks or wheels more.
+
+Stay safe and good luck!
+
+\t;See also
+\l;Controls\u command;.

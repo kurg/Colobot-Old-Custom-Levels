@@ -1,0 +1,536 @@
+Title.E      text="The hive"
+Resume.E     text="We tracked down numerous aliens in this particular area. You need to clear the hive."
+ScriptName.E text="Program"
+
+Instructions name="%lvl%/help.%lng%.txt"
+SoluceFile name="%lvl%/soluce.%lng%.txt"
+Satellite name="%lvl%/report.%lng%.txt"
+HelpFile name="cbot.txt"
+EndingFile   win=-1 lost=0
+
+Audio filename="%chap%/music/Aria2.ogg"
+AmbientColor   air=0.297;0.267;0.567;0.400 water=0.078;0.078;0.078;0.078
+FogColor       air=50;0;80;0 water=87;77;157;0 
+VehicleColor   color=185;175;220;0  
+InsectColor    color=245;240;255;0
+DeepView       air=450.00 water=40.00 
+FogStart       air=0.3 water=0.2
+SecondTexture  rank=1
+Background     image="%chap%/back01.png"
+ForegroundName image="%lvl%/lens1.png"
+
+
+
+
+TerrainGenerate     vision=550.00 depth=1 hard=0.7
+TerrainWind speed= 2;-6
+TerrainRelief       image="%lvl%/relief01.bmp" factor=1.0 border=0
+TerrainResource 	image="%lvl%/res01.bmp"
+TerrainWater	    image="%chap%/water.png" level=40.0 moveX=3.0 moveY=4.0 color=20;150;180;0 brightness=0.2
+//TerrainInitTextures image="%chap%/terra.png" dx=1 dy=1 table=1
+
+
+
+
+
+
+TerrainMaterial id=1 image="%chap%/textures/Aroca2" u=0.00 v=0.00 up=1 down=1 left=1 right=1 hard=0.8
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.25 v=0.00 up=2 down=1 left=1 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.50 v=0.00 up=1 down=1 left=1 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.75 v=0.00 up=2 down=1 left=1 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.00 v=0.25 up=1 down=2 left=1 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.25 v=0.25 up=2 down=2 left=1 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.50 v=0.25 up=1 down=2 left=1 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.75 v=0.25 up=2 down=2 left=1 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.00 v=0.50 up=1 down=1 left=2 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.25 v=0.50 up=2 down=1 left=2 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.50 v=0.50 up=1 down=1 left=2 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.75 v=0.50 up=2 down=1 left=2 right=2 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.00 v=0.75 up=1 down=2 left=2 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.25 v=0.75 up=2 down=2 left=2 right=1 hard=0.6
+TerrainMaterial image="%chap%/textures/Aroca2" u=0.50 v=0.75 up=1 down=2 left=2 right=2 hard=0.6
+TerrainMaterial id=2 image="%chap%/textures/Aroca2" u=0.75 v=0.75 up=2 down=2 left=2 right=2 hard=0.3
+
+TerrainMaterial id=3 image="%chap%/textures/Arocb2" u=0.00 v=0.00 up=1 down=1 left=1 right=1 hard=0.8
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.25 v=0.00 up=3 down=1 left=1 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.50 v=0.00 up=1 down=1 left=1 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.75 v=0.00 up=3 down=1 left=1 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.00 v=0.25 up=1 down=3 left=1 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.25 v=0.25 up=3 down=3 left=1 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.50 v=0.25 up=1 down=3 left=1 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.75 v=0.25 up=3 down=3 left=1 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.00 v=0.50 up=1 down=1 left=3 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.25 v=0.50 up=3 down=1 left=3 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.50 v=0.50 up=1 down=1 left=3 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.75 v=0.50 up=3 down=1 left=3 right=3 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.00 v=0.75 up=1 down=3 left=3 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.25 v=0.75 up=3 down=3 left=3 right=1 hard=0.4
+TerrainMaterial image="%chap%/textures/Arocb2" u=0.50 v=0.75 up=1 down=3 left=3 right=3 hard=0.4
+TerrainMaterial id=4 image="%chap%/textures/Arocb2" u=0.75 v=0.75 up=3 down=3 left=3 right=3 hard=0.0
+
+TerrainInit id=3
+TerrainLevel id=1 min= 0.0 max=99.0 slope=0.0 freq= 50.0 // roc1
+TerrainLevel id=2 min=17.5 max=25.0 slope=3.0 freq= 70.0 // grass
+TerrainLevel id=4 min=45.5 max=99.0 slope=9.0 freq= 80.0 // snow
+TerrainLevel id=2 min=25.0 max=45.5 slope=9.0 freq= 70.0 // grass
+
+
+
+
+
+
+
+
+
+
+
+TerrainCreate
+GroundSpot pos=260;252 radius=100 color=10;10;240
+
+GroundSpot color=18;18;255 min=-5 max=5 smooth=10
+
+CreateFog pos=257;-224 height=1 dim=60 delay=2.0 type=0
+CreateFog pos=-248;-234 height=2 dim=65 delay=1.0 type=1
+CreateFog pos=253;-262 height=-2 dim=70 delay=2.0 type=0
+CreateFog pos=253;-274 height=-1 dim=40 delay=2.0 type=1
+CreateFog pos=207;-240 height=2 dim=70 delay=2.0 type=1
+
+MaxFlyingHeight max=48
+
+BeginObject
+CreateObject pos=40;200 dir=1 type=SpaceShip run=1
+CreateObject pos=40;196.75 dir=1.5 type=Me range=30
+CreateObject pos=36.25;202.5 dir=0 type=Titanium
+CreateObject pos=37.5;202.5 dir=0 type=Titanium
+CreateObject pos=39.38;202.5 dir=0 type=Titanium
+CreateObject pos=40.63;202.5 dir=0 type=Titanium
+CreateObject pos=36.25;203.75 dir=0 type=PowerCell
+CreateObject pos=37.5;203.75 dir=0 type=PowerCell
+CreateObject pos=39.38;203.75 dir=0 type=PowerCell
+CreateObject pos=40.63;203.75 dir=0 type=PowerCell
+CreateObject pos=43.25;203 dir=1.5 type=TrackedGrabber
+CreateObject pos=141.54;-258.08 dir=1.17 type=Quartz1 h=-1.5
+CreateObject pos=356.15;-254.23 dir=0.09 type=Quartz1
+CreateObject pos=250;-332.69 dir=0.99 type=Quartz1
+CreateObject pos=-86.92;-305.77 dir=1.87 type=Quartz1
+CreateObject pos=-95.38;-268.08 dir=1.37 type=Quartz1 h=-1.5
+CreateObject pos=-143.08;-260.38 dir=1.98 type=Quartz1
+CreateObject pos=-132.31;-248.08 dir=1.48 type=Quartz1 h=-0.5
+CreateObject pos=-208.46;-264.23 dir=1.41 type=Quartz1 h=-1.5
+CreateObject pos=-176.15;-238.08 dir=1.94 type=Quartz1
+CreateObject pos=-101.54;153.46 dir=1 type=Quartz1 h=-1.5
+CreateObject pos=23.08;250.38 dir=0.08 type=Quartz1 h=-0.5
+CreateObject pos=34.62;225 dir=0.06 type=Quartz0
+CreateObject pos=37.69;235.77 dir=1.13 type=Quartz0 h=-0.5
+CreateObject pos=-55.38;239.62 dir=1.64 type=Quartz0
+CreateObject pos=-45.38;251.15 dir=0.26 type=Quartz0 h=-1.5
+CreateObject pos=-72.31;101.92 dir=0.29 type=Quartz0
+CreateObject pos=-91.54;109.62 dir=1.21 type=Quartz0 h=-1.5
+CreateObject pos=-124.62;89.62 dir=0.15 type=Quartz0
+CreateObject pos=-106.92;94.23 dir=1.5 type=Quartz0
+CreateObject pos=-140.77;61.92 dir=0.99 type=Quartz0 h=-1.5
+CreateObject pos=-150;-215.77 dir=1.53 type=Quartz0
+CreateObject pos=-171.54;-257.31 dir=0.69 type=Quartz0
+CreateObject pos=-220;-247.31 dir=0.88 type=Quartz0
+CreateObject pos=-159.23;-261.92 dir=0.27 type=Quartz0 h=-0.5
+CreateObject pos=-103.85;-278.08 dir=1.78 type=Quartz0
+CreateObject pos=-104.62;-257.31 dir=1 type=Quartz0
+CreateObject pos=-64.62;-257.31 dir=0.16 type=Quartz0 h=-1.5
+CreateObject pos=-61.54;-291.92 dir=0 type=Quartz0
+CreateObject pos=-32.31;-302.69 dir=0.04 type=Quartz0 h=-0.5
+CreateObject pos=166.15;-263.46 dir=1 type=Quartz0
+CreateObject pos=113.85;-218.08 dir=1.5 type=Quartz0 h=-1.5
+CreateObject pos=176.92;-228.08 dir=0.27 type=Quartz0
+CreateObject pos=324.62;-320.38 dir=0.9 type=Quartz0
+CreateObject pos=363.85;-265 dir=0 type=Quartz0 h=-0.5
+CreateObject pos=373.08;-231.92 dir=0 type=Quartz0 h=-1.5
+CreateObject pos=384.62;-251.15 dir=0.9 type=Quartz0
+CreateObject pos=345.38;-275 dir=0.67 type=Quartz0
+CreateObject pos=221.54;-266.54 dir=0 type=Quartz0
+CreateObject pos=-96.92;188.85 dir=0 type=Quartz2 h=-1.5
+CreateObject pos=-134.62;41.92 dir=0.92 type=Quartz2
+CreateObject pos=-132.31;59.62 dir=0.28 type=Quartz2
+CreateObject pos=-137.69;81.92 dir=0 type=Quartz2
+CreateObject pos=-119.23;90.38 dir=0.19 type=Quartz2 h=-0.5
+CreateObject pos=185.38;-247.31 dir=1.49 type=Quartz2
+CreateObject pos=155.38;-254.23 dir=1.2 type=Quartz2 h=-1.5
+CreateObject pos=172.31;-225.77 dir=0.14 type=Quartz2
+CreateObject pos=229.23;-270.38 dir=0.98 type=Quartz2
+CreateObject pos=96.15;-228.08 dir=0.05 type=Quartz2 h=-1.5
+CreateObject pos=216.92;-261.15 dir=0.04 type=Quartz2
+CreateObject pos=184.62;-266.54 dir=1.21 type=Quartz2
+CreateObject pos=140.77;-223.46 dir=1 type=Quartz2
+CreateObject pos=143.85;-218.85 dir=0.02 type=Quartz2 h=-1.5
+CreateObject pos=251.54;-216.54 dir=1.02 type=Quartz2 h=-0.5
+CreateObject pos=179.23;-207.31 dir=1.82 type=Quartz2
+CreateObject pos=331.54;-236.54 dir=0.25 type=Quartz2 h=-1.5
+CreateObject pos=290.77;-253.46 dir=1 type=Quartz2
+CreateObject pos=282.31;-246.54 dir=1.88 type=Quartz2
+CreateObject pos=325.38;-231.92 dir=1.11 type=Quartz2
+CreateObject pos=276.92;-226.54 dir=1.85 type=Quartz2 h=-1.5
+CreateObject pos=350;-223.46 dir=0.37 type=Quartz2
+CreateObject pos=-124.62;-254.23 dir=1.14 type=Quartz2
+CreateObject pos=-149.23;-241.92 dir=0 type=Quartz2
+CreateObject pos=-68.46;-251.15 dir=0.87 type=Quartz2
+CreateObject pos=-136.15;-262.69 dir=0 type=Quartz2 h=-1.5
+CreateObject pos=-72.31;-311.15 dir=1.15 type=Quartz2
+CreateObject pos=-139.23;-268.85 dir=1.03 type=Quartz2 h=-0.5
+CreateObject pos=-73.85;-278.08 dir=0.23 type=Quartz3
+CreateObject pos=-79.23;-275 dir=1.22 type=Quartz3
+CreateObject pos=-150;-218.08 dir=0.83 type=Quartz3 h=-1.5
+CreateObject pos=-178.46;-251.15 dir=0 type=Quartz3 h=-0.5
+CreateObject pos=-89.23;92.69 dir=0.84 type=Quartz3
+CreateObject pos=23.85;237.31 dir=1.93 type=Quartz3 h=-1.5
+CreateObject pos=290.77;-238.85 dir=1.52 type=Quartz3
+CreateObject pos=236.92;-245.77 dir=1.01 type=Quartz3 h=-0.5
+CreateObject pos=259.23;-273.46 dir=0.25 type=Quartz3 h=-1.5
+CreateObject pos=348.46;-274.23 dir=0.08 type=Quartz3 h=-0.5
+CreateObject pos=321.54;-257.31 dir=0.88 type=Quartz3
+CreateObject pos=340.77;-198.85 dir=1.49 type=Quartz3 h=-1.5
+CreateObject pos=304.62;-216.54 dir=0.87 type=Quartz3
+CreateObject pos=190.77;-219.62 dir=1.92 type=Quartz3
+CreateObject pos=182.31;-57.31 dir=0.91 type=Mushroom2
+CreateObject pos=186.15;-61.92 dir=0.03 type=Mushroom2 h=-0.5
+CreateObject pos=208.46;-72.69 dir=1.31 type=Mushroom2 h=-1.5
+CreateObject pos=210.77;-205 dir=0.59 type=Mushroom1
+CreateObject pos=222.31;-214.23 dir=1.81 type=Mushroom1 h=-0.5
+CreateObject pos=239.23;-203.46 dir=1.03 type=Mushroom1
+CreateObject pos=192.31;-181.15 dir=0.09 type=Mushroom1 h=-0.5
+CreateObject pos=225.38;-234.23 dir=0.64 type=Mushroom1
+CreateObject pos=201.54;-232.69 dir=1.38 type=Mushroom1 h=-0.5
+CreateObject pos=189.23;-198.08 dir=0.1 type=Mushroom1
+CreateObject pos=227.69;-185.77 dir=0.85 type=Mushroom1 h=-1.5
+CreateObject pos=205.38;-176.54 dir=0.06 type=Mushroom1
+CreateObject pos=233.08;-192.69 dir=0.93 type=Mushroom1
+CreateObject pos=220;-173.46 dir=1.91 type=Mushroom1
+CreateObject pos=243.85;-167.31 dir=0.88 type=Mushroom1 h=-0.5
+CreateObject pos=267.69;-202.69 dir=1.11 type=AlienNest
+CreateObject pos=-119.23;218.08 dir=1.18 type=UraniumOre
+CreateObject pos=-120;221.92 dir=0.24 type=UraniumOre
+CreateObject pos=-117.69;201.92 dir=0.99 type=UraniumOre
+CreateObject pos=-136.92;203.46 dir=1.95 type=UraniumOre
+CreateObject pos=-113.85;218.85 dir=0.89 type=UraniumOre
+CreateObject pos=-133.85;214.23 dir=0.11 type=UraniumOre
+CreateObject pos=-116.92;209.62 dir=1.18 type=UraniumOre
+CreateObject pos=-138.46;226.54 dir=0.09 type=UraniumOre
+CreateObject pos=-131.54;190.38 dir=0.63 type=UraniumOre
+CreateObject pos=-118.46;182.69 dir=1.86 type=UraniumOre
+CreateObject pos=263.08;-184.23 dir=1.49 type=MegaStalk1 h=-1.5
+CreateObject pos=281.54;-168.08 dir=0.1 type=MegaStalk3
+CreateObject pos=301.54;-187.31 dir=0.84 type=MegaStalk3 h=-1.5
+CreateObject pos=216.15;-190.38 dir=0.86 type=MegaStalk3 h=-2
+CreateObject pos=236.15;-227.31 dir=1.97 type=MegaStalk0 h=-1.5
+CreateObject pos=260.77;-149.62 dir=1.47 type=MegaStalk0 h=-2
+CreateObject pos=249.23;-128.85 dir=0.72 type=MegaStalk0 h=-2
+CreateObject pos=248.46;-145 dir=0.89 type=Mushroom1
+CreateObject pos=261.54;-117.31 dir=0.2 type=Mushroom1
+CreateObject pos=221.54;-148.08 dir=0.97 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+
+CreateObject pos=263.85;-158.08 dir=0.95 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=285.38;-142.69 dir=0.42 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=285.38;-200.38 dir=1.5 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=196.15;-251.15 dir=1.49 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=153.85;-243.46 dir=0.95 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=191.54;-165 dir=0.78 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=213.08;-154.23 dir=0.07 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=290;-154.23 dir=0.52 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=263.85;-231.92 dir=1.52 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=212.31;-129.62 dir=0.85 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=257.69;-242.69 dir=1.01 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=-78;-10 dir=1 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=288.46;-178.85 dir=0.91 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=231.54;-156.54 dir=1.87 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=200;-186.54 dir=0.2 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=210.77;-247.31 dir=1.38 type=AlienSpider script1="%lvl%/SPIDER2.TXT" run=1
+CreateObject pos=163.08;-202.69 dir=0 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=203.08;-145 dir=0.41 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=279.23;-191.92 dir=1.11 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=253.85;-204.23 dir=1.79 type=AlienSpider script1="%lvl%/SPIDER2.TXT" run=1
+CreateObject pos=247.69;-156.54 dir=0.59 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=272.31;-143.46 dir=1.86 type=AlienSpider script1="%lvl%/SPIDER1.TXT" run=1
+CreateObject pos=20;150.38 dir=0.18 type=Quartz0
+CreateObject pos=17.69;148.08 dir=0.54 type=Quartz1 h=-0.5
+CreateObject pos=193.85;-67.31 dir=0.91 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=179.23;-69.62 dir=1.27 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=-91.54;-38.08 dir=1.5 type=AlienSpider script1="%lvl%/SPIDER2.TXT" run=1
+CreateObject pos=10;-30.38 dir=1.98 type=Quartz0
+CreateObject pos=30.77;-85.77 dir=0.64 type=Quartz2
+CreateObject pos=12.31;-94.23 dir=0 type=Quartz3
+CreateObject pos=-44.62;-41.92 dir=1.14 type=Mushroom1
+CreateObject pos=-34.62;-43.46 dir=0.09 type=Mushroom1
+CreateObject pos=-35.38;-52.69 dir=0.84 type=Mushroom1 h=-1.5
+CreateObject pos=-21.54;-78.85 dir=0.65 type=Quartz0 h=-1
+CreateObject pos=37;198 dir=1 type=OrgaMatter
+CreateObject pos=-78.89;61.11 dir=0.3 type=Quartz0 h=-0.5
+CreateObject pos=-277.78;-76.67 dir=1.33 type=Quartz0
+CreateObject pos=-261.11;-55.56 dir=0.3 type=Quartz3 h=-1.5
+CreateObject pos=-285.56;-97.78 dir=0.91 type=Quartz3
+CreateObject pos=-250;-111.11 dir=0.14 type=Quartz3 h=-1.5
+CreateObject pos=-234.44;-95.56 dir=0.12 type=Quartz0
+CreateObject pos=-128.89;-146.67 dir=1.14 type=Quartz0
+CreateObject pos=-176.67;-67.78 dir=0.11 type=Quartz0
+CreateObject pos=-97.78;-137.78 dir=1 type=Quartz0
+CreateObject pos=-212.22;-155.56 dir=0.96 type=Quartz0
+CreateObject pos=-311.11;-127.78 dir=1.82 type=Quartz0 h=-1.5
+CreateObject pos=-308.89;-22.22 dir=0.25 type=Quartz0
+CreateObject pos=-268.89;-16.67 dir=0.85 type=Quartz1
+CreateObject pos=-347.78;-64.44 dir=0.03 type=Quartz1 h=-0.5
+CreateObject pos=-225.56;-80 dir=1.51 type=Quartz1
+CreateObject pos=-207.78;-104.44 dir=0.51 type=Quartz1 h=-1.5
+CreateObject pos=-268.89;-143.33 dir=0.98 type=Quartz1
+CreateObject pos=-227.78;-84.44 dir=0.72 type=Quartz2 h=-1.5
+CreateObject pos=-282.22;-73.33 dir=1.98 type=Quartz2
+CreateObject pos=-208.89;-80 dir=0.42 type=Quartz2
+CreateObject pos=-181.11;-154.44 dir=1.31 type=Quartz2
+CreateObject pos=-238.89;-111.11 dir=0.67 type=Quartz2 h=-1.5
+CreateObject pos=-244.44;-164.44 dir=1.88 type=Quartz2
+CreateObject pos=-155.56;-121.11 dir=1.2 type=Quartz3
+CreateObject pos=-167.78;-113.33 dir=0.18 type=Quartz3 h=-1.5
+CreateObject pos=-118.89;-100 dir=0.89 type=Quartz3 h=-1
+CreateObject pos=-193.33;-147.78 dir=0.04 type=Quartz3
+CreateObject pos=-121.11;-173.33 dir=1.33 type=Quartz3 h=-1.5
+CreateObject pos=-76.67;-147.78 dir=0.32 type=Quartz3
+CreateObject pos=343.33;-32.22 dir=1.16 type=UraniumOre
+CreateObject pos=341.11;-13.33 dir=1.83 type=UraniumOre
+CreateObject pos=355.56;-22.22 dir=0.56 type=UraniumOre
+CreateObject pos=320;-57.78 dir=1.74 type=UraniumOre
+CreateObject pos=310;-15.56 dir=0.29 type=UraniumOre
+CreateObject pos=348.89;-62.22 dir=1.11 type=UraniumOre
+CreateObject pos=125.56;241.11 dir=0.85 type=TitaniumOre
+CreateObject pos=101.11;228.89 dir=0.14 type=TitaniumOre
+CreateObject pos=137.78;220 dir=1 type=TitaniumOre
+CreateObject pos=104.44;247.78 dir=0.31 type=TitaniumOre
+CreateObject pos=128.89;193.33 dir=0.95 type=TitaniumOre
+CreateObject pos=100;208.89 dir=1.86 type=TitaniumOre
+CreateObject pos=125.56;223.33 dir=0.91 type=TitaniumOre
+CreateObject pos=28.89;108.89 dir=0.48 type=Mushroom1
+CreateObject pos=21.11;97.78 dir=1.87 type=Mushroom1 h=-0.5
+CreateObject pos=15.56;117.78 dir=0.39 type=Mushroom1
+CreateObject pos=16.67;96.67 dir=0.93 type=Mushroom1 h=-0.5
+CreateObject pos=-5.56;104.44 dir=0.11 type=Mushroom1
+CreateObject pos=-45.56;91.11 dir=1.41 type=Quartz0 h=-1.5
+CreateObject pos=-48.89;85.56 dir=1.98 type=Quartz3
+CreateObject pos=158.89;-50 dir=0.9 type=Mushroom2
+CreateObject pos=145.56;-56.67 dir=0.15 type=Mushroom2 h=-0.5
+CreateObject pos=148.89;-75.56 dir=0.87 type=Mushroom2
+CreateObject pos=148.89;-91.11 dir=0 type=Mushroom2 h=-1.5
+CreateObject pos=160;-107.78 dir=1.15 type=Mushroom2
+CreateObject pos=148.89;-87.78 dir=0.15 type=Mushroom2
+CreateObject pos=170;-87.78 dir=0.83 type=Mushroom2
+CreateObject pos=152.22;-93.33 dir=1 type=Mushroom2 h=-1
+CreateObject pos=162.22;-97.78 dir=0 type=Mushroom2 h=-0.5
+CreateObject pos=161.11;-76.67 dir=0.59 type=Mushroom2
+CreateObject pos=-121.11;-280 dir=1.99 type=Greenery7
+CreateObject pos=-306.15;232.69 dir=0.09 type=Quartz0 h=-1.5
+CreateObject pos=-326.15;207.31 dir=0.44 type=Quartz3
+CreateObject pos=-303.08;256.54 dir=0.07 type=Quartz3 h=-1
+CreateObject pos=-312.31;256.54 dir=0.11 type=Quartz1 h=-1.5
+CreateObject pos=-320.77;245.77 dir=0 type=UraniumOre
+CreateObject pos=-316.15;232.69 dir=0.91 type=UraniumOre
+CreateObject pos=-336.15;236.54 dir=1.79 type=UraniumOre
+CreateObject pos=111.54;-70.38 dir=1.02 type=Quartz0 h=-0.5
+CreateObject pos=122.31;-72.69 dir=1.89 type=Quartz3 h=-1.5
+CreateObject pos=173.08;-241.92 dir=0.53 type=Quartz3
+CreateObject pos=203.85;-308.85 dir=1.72 type=Quartz3 h=-1.5
+CreateObject pos=-275.38;-293.46 dir=1.56 type=Quartz3 h=-0.5
+CreateObject pos=-353.08;-192.69 dir=0.84 type=Quartz3
+CreateObject pos=-366.15;62.69 dir=0.04 type=Quartz0
+CreateObject pos=-343.08;91.92 dir=1.43 type=Quartz0 h=-1.5
+CreateObject pos=-248.46;-45.77 dir=1 type=Quartz0
+CreateObject pos=-244.62;-30.38 dir=0.12 type=Quartz0
+CreateObject pos=-199.23;206.54 dir=0.83 type=Quartz0
+CreateObject pos=-205.38;128.08 dir=1.81 type=Quartz0 h=-0.5
+CreateObject pos=-220.77;131.92 dir=1.89 type=Quartz3 h=-1
+CreateObject pos=-205.38;121.15 dir=0.82 type=Quartz3 h=-1.5
+CreateObject pos=-219.23;115 dir=0.21 type=Quartz0
+CreateObject pos=-204.62;134.23 dir=1.39 type=Quartz1 h=-0.5
+CreateObject pos=-232.31;109.62 dir=1.91 type=Quartz1 h=-1.5
+CreateObject pos=-222.31;126.54 dir=1 type=Quartz2
+CreateObject pos=340.77;198.85 dir=1 type=Quartz2 h=-1.5
+CreateObject pos=335.38;209.62 dir=1.21 type=Quartz0
+CreateObject pos=315.38;184.23 dir=0.75 type=Quartz3
+CreateObject pos=208.46;328.08 dir=0 type=Quartz1
+CreateObject pos=200;337.31 dir=0.82 type=Quartz0
+CreateObject pos=104.62;-137.31 dir=0.98 type=Quartz0
+CreateObject pos=116.15;-141.15 dir=0.88 type=Quartz3 h=-1.5
+CreateObject pos=251.54;-36.54 dir=1.48 type=Mushroom2
+CreateObject pos=243.08;-38.85 dir=1.08 type=Mushroom2 h=-1
+CreateObject pos=247.69;-53.46 dir=0.08 type=Mushroom2
+CreateObject pos=263.85;-42.69 dir=0.96 type=Mushroom2 h=-1
+CreateObject pos=218.46;-38.08 dir=1.09 type=Mushroom2
+CreateObject pos=260;-65 dir=1.99 type=Quartz0
+CreateObject pos=232.31;-45 dir=0.88 type=Quartz0
+CreateObject pos=-104.62;358.08 dir=0.11 type=Quartz1 h=-1.5
+CreateObject pos=-73.85;363.46 dir=0.78 type=Quartz1
+CreateObject pos=83.85;355.77 dir=0.84 type=Quartz1 h=-1.5
+CreateObject pos=100.77;354.23 dir=0.08 type=Quartz1 h=-0.5
+CreateObject pos=173.08;358.08 dir=0.91 type=Quartz1
+CreateObject pos=-165.38;355.77 dir=0.9 type=Quartz1
+CreateObject pos=-205.38;349.62 dir=1.2 type=Quartz1 h=-1.5
+CreateObject pos=-240;349.62 dir=0.92 type=Quartz1
+CreateObject pos=-263.08;334.23 dir=0.1 type=Quartz1
+CreateObject pos=-230;358.08 dir=1.25 type=Quartz1
+CreateObject pos=-188.46;356.54 dir=0.06 type=Quartz1 h=-1.5
+CreateObject pos=-146.92;355.77 dir=1.92 type=Quartz1
+CreateObject pos=-125.38;360.38 dir=0.47 type=Quartz1
+CreateObject pos=61.54;358.85 dir=0.87 type=Quartz1
+CreateObject pos=121.54;360.38 dir=1.89 type=Quartz1 h=-1
+CreateObject pos=-176.92;361.92 dir=0.74 type=Quartz0
+CreateObject pos=-202.31;357.31 dir=1.47 type=Quartz0 h=-1.5
+CreateObject pos=-146.92;363.46 dir=1.96 type=Quartz0
+CreateObject pos=63.85;358.08 dir=1.91 type=Quartz0
+CreateObject pos=112.31;349.62 dir=1.25 type=Quartz0
+CreateObject pos=145.38;356.54 dir=1.88 type=Quartz0 h=-0.5
+CreateObject pos=191.54;351.15 dir=0 type=Quartz0 h=-1.5
+CreateObject pos=236.15;356.54 dir=0 type=Quartz0
+CreateObject pos=248.46;340.38 dir=0 type=Quartz0
+CreateObject pos=320.77;271.15 dir=0.67 type=Quartz0 h=-1.5
+CreateObject pos=316.15;211.92 dir=1.76 type=Quartz0
+CreateObject pos=291.54;230.38 dir=1.43 type=Quartz0
+CreateObject pos=-323.08;159.62 dir=1.79 type=Quartz0
+CreateObject pos=-376.92;-52.69 dir=1.65 type=Quartz0 h=-0.5
+CreateObject pos=-369.23;-116.54 dir=0.51 type=Quartz0
+CreateObject pos=320.77;-122.69 dir=1.3 type=Quartz0
+CreateObject pos=17.69;-121.15 dir=1.17 type=Quartz0 h=-0.5
+CreateObject pos=-283.85;281.15 dir=0.05 type=Quartz2 h=-1
+CreateObject pos=-358.46;132.69 dir=1.65 type=Quartz2 h=-1.5
+CreateObject pos=-214.62;344.23 dir=0.14 type=Quartz2
+CreateObject pos=-212.31;360.38 dir=0.01 type=Quartz2
+CreateObject pos=19.23;361.15 dir=0.88 type=Quartz2
+CreateObject pos=220.77;355.77 dir=0.18 type=Quartz2
+CreateObject pos=313.08;324.23 dir=0.85 type=Quartz2 h=-0.5
+CreateObject pos=-376.92;-100.38 dir=1.85 type=Quartz2
+CreateObject pos=-333.08;181.92 dir=0.18 type=Quartz3 h=-1.5
+CreateObject pos=-268.46;308.08 dir=0.23 type=Quartz3
+CreateObject pos=49.23;364.23 dir=0.27 type=Quartz3
+CreateObject pos=-48.46;362.69 dir=1.42 type=Quartz3
+CreateObject pos=266.15;343.46 dir=1.86 type=Quartz3
+CreateObject pos=294.62;318.08 dir=0.71 type=Quartz3 h=-1
+CreateObject pos=394.44;95.56 dir=0.84 type=Quartz3
+CreateObject pos=376.67;127.78 dir=0.77 type=Quartz3
+CreateObject pos=378.89;98.89 dir=1.55 type=Quartz0
+CreateObject pos=368.89;62.22 dir=0.4 type=Quartz2
+
+CreateObject pos=-128.89;-277.78 dir=0.09 type=AlienSpider script1="%lvl%/SPIDER2.TXT" run=1
+CreateObject pos=-142.22;-308.89 dir=1.96 type=Quartz0
+CreateObject pos=-108.89;-316.67 dir=0.43 type=Quartz0 h=-1.5
+CreateObject pos=-85.56;-336.67 dir=1.73 type=Quartz0
+CreateObject pos=-46.67;-377.78 dir=1.4 type=Quartz1
+CreateObject pos=-92.22;-320 dir=0.79 type=Quartz1 h=-0.5
+CreateObject pos=-151.11;-343.33 dir=1.86 type=Quartz1
+CreateObject pos=-126.67;-322.22 dir=0.42 type=Quartz2
+CreateObject pos=-221.11;-333.33 dir=0.85 type=Quartz2 h=-1.5
+CreateObject pos=-187.78;-327.78 dir=0.1 type=Quartz2
+CreateObject pos=-205.56;-320 dir=0.55 type=Quartz3 h=-1
+CreateObject pos=-101.11;-340 dir=1.79 type=Quartz3
+CreateObject pos=210;-377.78 dir=1.51 type=Quartz3 h=-1.5
+CreateObject pos=100;-367.78 dir=1.19 type=Quartz3
+CreateObject pos=57.78;-377.78 dir=1.81 type=Quartz0 h=-1.5
+CreateObject pos=-78.89;-354.44 dir=1.98 type=MegaStalk2 h=-1.5
+CreateObject pos=-96.67;-293.33 dir=0.04 type=UraniumOre
+CreateObject pos=-86.67;-282.22 dir=0.83 type=UraniumOre
+CreateObject pos=-131.11;-290 dir=0.58 type=UraniumOre
+CreateObject pos=-16.67;243.33 dir=1.84 type=Quartz1
+CreateObject pos=0;245.56 dir=0.78 type=Quartz1
+CreateObject pos=-11.11;258.89 dir=1.15 type=Quartz0 h=-0.5
+CreateObject pos=-17.78;251.11 dir=1 type=Quartz2
+CreateObject pos=7.78;238.89 dir=1.94 type=Quartz2
+CreateObject pos=-7.78;241.11 dir=1.6 type=Quartz3
+CreateObject pos=-96.67;248.89 dir=1.25 type=Quartz0 h=-1
+CreateObject pos=15.56;77.78 dir=0.65 type=Quartz0 h=-0.5
+CreateObject pos=87.78;-4.44 dir=1.89 type=Quartz0
+CreateObject pos=195.56;15.56 dir=1.74 type=Quartz3 h=-1.5
+CreateObject pos=131.11;27.78 dir=0.98 type=Quartz1
+CreateObject pos=247.78;44.44 dir=1.88 type=UraniumOre
+CreateObject pos=255.56;57.78 dir=1.81 type=UraniumOre
+CreateObject pos=255.56;76.67 dir=1.74 type=UraniumOre
+CreateObject pos=231.11;80 dir=1.69 type=UraniumOre
+CreateObject pos=217.78;62.22 dir=1.75 type=UraniumOre
+CreateObject pos=232.22;54.44 dir=1.7 type=UraniumOre
+CreateObject pos=247.78;103.33 dir=1.7 type=UraniumOre
+CreateObject pos=243.33;98.89 dir=0.55 type=UraniumOre
+CreateObject pos=227.78;87.78 dir=1.41 type=UraniumOre
+CreateObject pos=240;67.78 dir=0 type=UraniumOre
+CreateObject pos=257.78;57.78 dir=1 type=UraniumOre
+CreateObject pos=208.89;76.67 dir=1.5 type=UraniumOre
+CreateObject pos=207.78;47.78 dir=0.96 type=UraniumOre
+CreateObject pos=225.56;45.56 dir=0.21 type=UraniumOre
+CreateObject pos=238.89;73.33 dir=1 type=UraniumOre
+CreateObject pos=278.89;-274.44 dir=0.81 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=228.89;-277.78 dir=0 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=320;-196.67 dir=0.82 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=176.67;-134.44 dir=1.1 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=122.22;-243.33 dir=1.62 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+CreateObject pos=328.89;-171.11 dir=0.65 type=AlienAnt script1="%lvl%/ANT1.TXT" run=1
+
+CreateObject pos=304;-236 dir=1.12 type=AlienQueen script1="%lvl%/QUEEN2.TXT" run=1
+
+CreateObject pos=-183.08;-208.08 dir=1.9 type=Mushroom2
+CreateObject pos=-106.15;-291.92 dir=1.06 type=RuinRadar
+CreateObject pos=-108.46;-294.23 dir=0.86 type=WreckBott1
+CreateObject pos=-102;-301.46 dir=0.09 type=RuinBotFactory
+CreateObject pos=30.77;-330.38 dir=1.82 type=OrgaMatter
+CreateObject pos=60;-315.77 dir=0.23 type=OrgaMatter
+CreateObject pos=71.54;-339.62 dir=1.2 type=OrgaMatter
+CreateObject pos=-109.23;-303.46 dir=0.89 type=BlueFlag
+CreateObject pos=-106.4;-305.5 dir=1.4 type=Titanium
+CreateObject pos=-107.2;-302.25 dir=0.35 type=NuclearCell power=0.11
+CreateObject pos=-99.2;-301.25 dir=0.35 type=WingedOrgaShooter power=0 shield=0.12 proxyActivate=1 proxyDistance=20 
+
+
+CreateLight dir= 0.0;-1.0; 0.0 color= 1.00; 1.00; 0.90 type=Terrain
+CreateLight dir= 1.0; 0.0;-1.0 color=-0.78;-0.55;-0.22 type=Terrain
+CreateLight dir=-1.0; 0.0; 1.0 color= 1.10; 1.30; 2.20 type=Terrain
+CreateLight dir=-1.0;-1.0; 1.0 color= 0.28; 0.28; 0.28 type=Object
+CreateLight dir= 1.0;-1.0; 1.0 color= 0.16; 0.16; 0.16 type=Object
+CreateLight dir=-1.0;-1.0;-1.0 color= 0.16; 0.16; 0.16 type=Object
+CreateLight dir= 1.0;-1.0;-1.0 color= 0.08; 0.08; 0.08 type=Object
+
+WaterColor color=-0.1;-0.1;-0.1
+MapColor floor=255;165;0 water=40;40;255
+
+EnableBuild type=AutoLab
+EnableBuild type=ResearchCenter
+EnableBuild type=Derrick
+EnableBuild type=BotFactory
+EnableBuild type=PowerStation
+EnableBuild type=Converter
+EnableBuild type=RepairCenter
+EnableBuild type=DefenseTower
+EnableBuild type=RadarStation
+EnableBuild type=ExchangePost
+EnableBuild type=PowerPlant
+EnableBuild type=NuclearPlant
+
+EnableBuild type=FlatGround
+EnableBuild type=Flag
+
+
+EnableResearch type=PHAZER
+EnableResearch type=TRACKER
+EnableResearch type=WINGER
+EnableResearch type=THUMPER
+EnableResearch type=TOWER
+EnableResearch type=SHIELDER
+EnableResearch type=ATOMIC
+EnableResearch type=SNIFFER
+EnableResearch type=SUBBER
+EnableResearch type=RECYCLER
+EnableResearch type=SHOOTER
+EnableResearch type=iGUN
+EnableResearch type=iPAW
+
+
+DoneResearch type=TRACKER
+DoneResearch type=WINGER
+DoneResearch type=SNIFFER
+DoneResearch type=SHOOTER
+DoneResearch type=SUBBER
+
+
+EndMissionTake pos=0.00;0.00 dist=25000.00 type=Me lost=0
+EndMissionTake pos=0;0 dist=25000.00 type=AlienAnt min=0 max=0
+EndMissionTake pos=0;0 dist=25000.00 type=AlienSpider min=0 max=0
+
+Camera eye=0.00;5.00;0.00 lookat=0.00;1.00;0.00 delay=0
+
