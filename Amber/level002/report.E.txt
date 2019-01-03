@@ -1,0 +1,18 @@
+\b;Satellite Report
+Currently in a geo-stationary orbit of Amber.
+\c;
+\s;-> SURFACE\c;
+\tab;Temperature:      38.5C
+\tab;Atmosphere:       nitrogen, oxygen, carbon dioxide
+\tab;Wind:             10.0 mps
+\tab;Titanium ore:     no information available
+\tab;Uranium ore:      no information available
+
+\s;-> SUBSOIL\c;
+\tab;Energy source:    almost none
+\tab;Titanium ore:     little
+\tab;Uranium ore:      some
+
+\s;-> ADDITIONAL INFORMATION\c;
+\tab;Detected:         lakes of boiling oil
+\n;

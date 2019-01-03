@@ -1,0 +1,103 @@
+extern void object::Catchmeifyoucan( )
+{
+errmode(0); 
+while ( ismovie() != 0 )  wait(1);
+grab();
+wait(2);
+jet(1);
+wait(3+rand()*1);
+turn(180);
+jet(1);
+motor(0.8+rand()*0.3,0.8+rand()*0.2);
+wait(1+rand()*2);
+motor(0.8+rand()*0.3,0.8+rand()*0.2);
+wait(1+rand()*2);
+motor(0,0);
+
+int list[];
+int i = 0;
+list[i++] = Me;
+list[i++] = WingedShooter;
+list[i++] = TrackedShooter;
+list[i++] = WheeledGrabber;
+list[i++] = WingedGrabber;
+list[i++] = TrackedGrabber;
+list[i++] = Subber;
+
+object mypreciousbox;
+object thebadguywhowantstostealmypreciousbox;
+
+
+point dest;
+
+while(true)
+{
+if ( load == null )
+{
+jet(1);
+thebadguywhowantstostealmypreciousbox = radar(list, 0, 360, 0, 50+rand()*20);
+if(thebadguywhowantstostealmypreciousbox == null and rand()<0.3)
+{
+wait(1+rand()*1);
+thebadguywhowantstostealmypreciousbox = radar(list, 0, 360, 0, 50+rand()*20);
+}
+
+if(thebadguywhowantstostealmypreciousbox == null and rand()<0.95)
+{
+dest = position;
+dest.x = dest.x + (rand()-0.5)*35;
+dest.y = dest.y + (rand()-0.5)*35;
+if(abs(dest.x)>370 or abs(dest.y)>370)
+{continue;}
+goto(dest);
+wait(rand()*1.5);
+
+mypreciousbox = radar(BlackBox);
+if((rand()>0.2) and (distance(position,mypreciousbox.position)>(60+rand()*30)))
+{
+goto(mypreciousbox.position);
+continue;
+}
+}
+else
+{
+jet(0);
+mypreciousbox = radar(BlackBox);
+if(distance(position,mypreciousbox.position)<250)
+{
+goto(mypreciousbox.position,mypreciousbox.altitude-1);
+jet(-1);
+while ( altitude > 0);
+{
+grab();
+}
+jet(1);
+}
+
+}
+
+}
+else
+{
+jet(1);
+dest = position;
+dest.x = dest.x + (rand()-0.5)*300;
+dest.y = dest.y + (rand()-0.5)*300;
+if(rand()>0.8)
+{
+dest.x = dest.x + (rand()-0.5)*600;
+dest.y = dest.y + (rand()-0.5)*600;
+}
+if(abs(dest.x)>350 or abs(dest.y)>350 or topo(dest)<1 or topo(dest) > 7)
+{continue;}
+goto(dest);
+
+thebadguywhowantstostealmypreciousbox = radar(list, 0, 360, 0, 45+rand()*35);
+if(thebadguywhowantstostealmypreciousbox == null)
+{
+drop();
+}
+}
+
+}
+}

@@ -1,0 +1,212 @@
+extern void object::Attack( )
+{
+int listfirst[], j;
+int list[], i;
+
+object target;
+point center;
+point lastPos;
+point truecenter;
+float distCent;
+float r;
+object re;
+
+errmode(0); 
+while ( ismovie() != 0 )  wait(1);
+
+
+j = 0;
+listfirst[j++] = WingedShooter;
+listfirst[j++] = TrackedShooter;
+listfirst[j++] = WheeledShooter;
+listfirst[j++] = LeggedShooter;
+listfirst[j++] = PracticeBot;
+listfirst[j++] = Me;
+
+
+i = 0;
+list[i++] = AlienAnt;
+list[i++] = AlienQueen;
+
+list[i++] = WingedGrabber;
+list[i++] = TrackedGrabber;
+list[i++] = WheeledGrabber;
+list[i++] = LeggedGrabber;
+list[i++] = WingedShooter;
+list[i++] = TrackedShooter;
+list[i++] = WheeledShooter;
+list[i++] = LeggedShooter;
+list[i++] = WingedSniffer;
+list[i++] = TrackedSniffer;
+list[i++] = WheeledSniffer;
+list[i++] = LeggedSniffer;
+list[i++] = Thumper;
+//list[i++] = PhazerShooter;
+list[i++] = Recycler;
+list[i++] = Shielder;
+list[i++] = Subber;
+list[i++] = Derrick;
+list[i++] = BotFactory;
+//list[i++] = PowerStation;
+list[i++] = Converter;
+//list[i++] = RepairCenter;
+list[i++] = DefenseTower;
+list[i++] = ResearchCenter;
+list[i++] = RadarStation;
+//list[i++] = ExchangePost;
+list[i++] = PowerPlant;
+list[i++] = AutoLab;
+list[i++] = NuclearPlant;
+//list[i++] = PowerCell;
+//list[i++] = Titanium;
+
+
+center = position;
+truecenter = position;
+
+distCent = 40; 
+
+lastPos = position;
+motor(0,0);
+while ( true )
+{
+if ( energyCell.energyLevel < 0.5 )
+{   lastPos=position;
+re = radar(PowerStation,0,360,0,250);
+if ( re != null )
+{
+goto(re.position);
+while ( energyCell.energyLevel < 1 )
+{
+goto(re.position);
+wait(1);
+}
+goto(lastPos);
+}
+}
+
+
+if ( shieldLevel < 0.5 )
+{   lastPos=position;
+re = radar(RepairCenter,0,360,0,250);
+if ( re != null )
+{
+goto(re.position);
+while ( shieldLevel < 1 )
+{
+goto(re.position);
+wait(1);
+}
+goto(lastPos);
+}
+}
+
+target = radar(listfirst, 0, 360, 0, 45);
+if (target == null)
+target = radar(list, 0, 360, 0, 45);
+if (target == null or topo(position)<0)
+{       
+motor(0,0);
+wait(rand());
+if(rand()<0.2)
+{
+if (distance2d(position, center) > distCent or topo(position)<0)
+{   
+motor(0, 0);
+wait(0.5);  
+motor (-0.5, -0.5);
+wait (0.5);
+turn(direction(center));
+motor (1, 1);
+do 
+{
+lastPos = position;
+wait(0.5); 
+if (distance2d(lastPos, position) < 0.2)
+{  
+turn(rand()*360-180);
+motor(1,1);
+wait(0.3);
+turn(direction(center));
+}
+}
+while (distance2d(position, center) > distCent or topo(position)<0);
+}
+else
+{  
+if (distance2d(lastPos, position) < 0.2)
+{ 
+turn(rand()*360-180);
+motor(1,1);
+wait(0.5);
+}
+r = rand();
+if (r > 0.6)
+{ 
+motor (1, 0.7);
+wait(rand()*3);
+motor (1, 1); 
+}
+if (r < 0.4)
+{  
+motor (0.7, 1);
+wait(rand()*3);
+motor (1, 1);  
+}
+
+wait(1);     
+if (rand() < 0.1)
+{  
+motor (0, 0);
+wait(rand()*3);
+motor (1, 1);  
+}   
+lastPos = position;
+}
+}
+
+}
+else
+{   
+turn(direction(target.position));
+if(distance2d(position, target.position)<35)
+{
+object front;
+//aim(rand()*14-7);
+aim(atan((target.position.z-position.z)/distance2d(position,target.position))+distance2d(position,target.position)*0.2);
+front = radar(listfirst, 0, 20, 0, 45);
+if (front == null)
+front = radar(list, 0, 20, 0, 45);
+if(target!=null);
+fire(0.2+rand()*1.5);
+if(front==null)
+turn(direction(target.position));
+if(rand()<0.15)
+wait(0.2+rand()*2);
+}
+
+
+motor(1,1);
+if(distance2d(position, target.position)<10 and distance2d(position, target.position) >= 4)
+{motor(0,0); wait(rand()*0.5);}
+else
+if(distance2d(position, target.position)<4)
+{
+motor(-1,-1);  
+wait(1+rand());
+}     
+wait(1+rand());
+if(rand()<0.1)
+{
+turn(rand()*180-90);     
+motor(1,1);        
+wait(0.3+rand()*2);
+} 
+}
+
+
+
+        
+}
+
+}

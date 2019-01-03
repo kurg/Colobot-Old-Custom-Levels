@@ -1,0 +1,4 @@
+\b;Walkthrough
+South of your position is a winged shooter. You may use it too kill the wasp. Take the black box then.
+\t;See also
+\l;Controls\u command;

@@ -1,0 +1,135 @@
+extern void object::QueenWasp( )
+{
+
+errmode(0);
+while ( ismovie() != 0 )  wait(1);
+
+
+point center;
+point lastPos;
+float distCent;
+float r;
+
+center = position;
+
+
+distCent = 25; 
+
+lastPos = position;
+motor(1,1);
+
+while ( true )
+{    
+if(topo(position)<0)
+{        
+if(rand()>0.3){motor(0,0);wait(1)+rand()*3;}                              
+if (distance2d(position, center) > distCent or topo(position)<0)
+{   
+motor(0, 0);
+wait(0.5+rand());  
+motor (-rand(), -rand());
+wait (1.5+rand()*2);
+turn(direction(center));
+motor (1, 1);
+do 
+{
+lastPos = position;
+wait(0.5+rand()*2); 
+if (distance2d(lastPos, position) < 0.2)
+{  
+turn(rand()*360-180);
+motor(1,1);
+wait(1);
+turn(direction(center));
+}
+}
+while (distance2d(position, center) > distCent or topo(position)<0);
+}
+
+
+
+}
+else
+{  
+if( rand() < 0.1 and WaspCount() <6 )
+{
+produce(position, orientation, AlienWasp, "%lvl%/WASP1.TXT");
+wait(1+2*rand());
+}
+if( rand() < 0.2 and AntCount() <1 )
+{
+produce(position, orientation, AlienAnt, "%lvl%/ANT1.TXT");
+wait(1+2*rand());
+}
+
+
+if (distance2d(lastPos, position) < 0.2)
+{ 
+turn(rand()*360-180);
+motor(1,1);
+wait(rand()*3);
+}
+r = rand();
+if (r > 0.6)
+{ 
+motor (1, 0.7);
+wait(rand()*3);
+motor (1, 1); 
+}
+if (r < 0.4)
+{  
+motor (0.7, 1);
+wait(rand()*3);
+motor (1, 1);  
+}
+
+wait(1);     
+if (rand() < 0.1)
+{  
+motor (0, 0);
+wait(rand()*3);
+motor (1, 1);  
+}   
+lastPos = position;
+}
+
+}
+
+}
+
+int object::WaspCount()
+{
+object  item;
+int     total = 0;
+int     i = 0;
+
+while ( true )
+{
+item = retobject(i++);
+if ( item == null )  return total;
+
+if ( item.category == AlienWasp )
+{
+total ++;
+}
+}
+}
+
+int object::AntCount()
+{
+object  item;
+int     total = 0;
+int     i = 0;
+
+while ( true )
+{
+item = retobject(i++);
+if ( item == null )  return total;
+
+if ( item.category == AlienAnt )
+{
+total ++;
+}
+}
+}
+

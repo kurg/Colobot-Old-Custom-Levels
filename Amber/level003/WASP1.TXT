@@ -1,0 +1,149 @@
+extern void object::Attack( )
+{
+object p;
+int list[];
+int i;
+int timer;
+float dist;
+point dest;
+point save;
+save.x = 450;
+save.y = 450;
+
+errmode(0);  
+while ( ismovie() != 0 )  wait(1);
+
+i = 0;
+list[i++] = NuclearCell;
+list[i++] = Titanium;
+
+while ( true )
+{
+if ( load == null )  
+{
+p = radar(list, 0, 360, 0, 235);
+if ( p == null)
+{
+jet(1);
+if(save.x != 450 and save.y != 450)
+{dest=save;save.x=450; save.y=450;}
+else
+{
+dest = position;
+}
+dest.x += (rand()-0.5)*150;
+dest.y += (rand()-0.5)*150;
+if(abs(dest.x)>370 or abs(dest.y)>370)
+{continue;}
+goto(dest);  
+wait(5+rand()*2);
+}
+else
+{
+
+dest = p.position;
+dest.z = position.z;
+dist = distance(dest, position);
+if(dist > 10)
+{wait(5+rand()*10);}
+
+if(rand()>0.5)
+{
+p = radar(list, 0, 360, 0, 230, -1);
+}
+else
+{
+p = radar(list, 0, 360, 0, 230, 1);
+}
+
+if ( p != null)
+{
+
+if ( dist > 1.25 )
+{
+jet(1);
+save=p.position;
+goto(p.position,p.altitude);
+}
+else
+{
+
+p = radar(AlienWasp, 0, 360, 0, 20);
+if ( p == null)
+{
+jet(-1);
+
+while ( altitude > 0);
+{
+grab();
+
+
+}
+jet(1);
+}
+else
+{
+if(0.7>rand())
+{
+turn(direction(p.position));
+move(-distance2d(position,p.position));
+}
+if(0.5>rand())
+{wait(3+rand()*5);
+}
+else
+{
+dest = position;
+while(true)
+{
+dest.x += (rand()-0.5)*50;
+dest.y += (rand()-0.5)*50;
+if(abs(dest.x)>370 or abs(dest.y)>370)
+{continue;}
+if(abs(dest.x-position.x)<20 or abs(dest.y-position.y)<20)
+{continue;}
+goto(dest);  
+wait(1+rand()*4);
+break;
+}
+}
+}
+
+
+}
+}
+}
+}
+else
+{
+jet(1);
+p = radar(AlienAnt);
+if ( p == null )
+{
+dest = position;
+dest.x += (rand()-0.5)*120;
+dest.y += (rand()-0.5)*120;
+if(abs(dest.x)>370 or abs(dest.y)>370)
+{continue;}
+goto(dest); 
+wait(2+rand()*2);
+}
+else
+{
+dest = p.position;
+dest.z = position.z;
+dist = distance(dest, position);
+if ( dist > 15 )
+{
+goto(p.position);
+}
+else
+{
+drop();
+jet(1);
+wait(11+rand()*4);
+}
+}
+}
+}
+}

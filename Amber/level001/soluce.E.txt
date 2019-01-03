@@ -1,0 +1,18 @@
+\b;Walkthrough
+Locations of threee robots (x,y):
+-275.56;-332.22,
+190.77;141.92,
+291;-111.
+
+The wasps will take any titanium and nuclear cells and take it to ants, who will immediately destroy it.
+There is a lone robot near one of the practice bots (one at 190.77;141.92), that will shoot anything on sight, and it's battery is full.
+Its a non selctable tracked shooter.
+There's also a discoverable tracked organic shooter and winged grabber on the map somewhere.
+In the southeast corner of the map is a small encampment with some powet cells and working recharge station and power cell factory.
+The practice bot (one at -275.56;-332.22) is in this encampment.
+There is a minefield and the third bot (one at 291;-111) is in the center of it.
+
+All the bots have little to no power so you need to provide battery in order to drive them to your ship.
+Remember to protect your practice bots, as having one of them destroyed fails the mission.
+\t;See also
+\l;Controls\u command;

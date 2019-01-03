@@ -1,0 +1,57 @@
+extern void object::ACTIVATE( )
+{
+
+
+int list[], i;
+i=0;
+list[i++] = WingedGrabber;
+list[i++] = WingedShooter;
+list[i++] = WingedOrgaShooter;
+list[i++] = WingedSniffer;
+list[i++] = Me;
+list[i++] = TrackedGrabber;
+list[i++] = WheeledGrabber;
+list[i++] = LeggedGrabber;
+list[i++] = TrackedShooter;
+list[i++] = WheeledShooter;
+list[i++] = LeggedShooter;
+list[i++] = TrackedOrgaShooter;
+list[i++] = WheeledOrgaShooter;
+list[i++] = LeggedOrgaShooter;
+list[i++] = TrackedSniffer;
+list[i++] = WheeledSniffer;
+list[i++] = LeggedSniffer;
+list[i++] = Thumper;
+list[i++] = PhazerShooter;
+list[i++] = Recycler;
+list[i++] = Shielder;
+list[i++] = Subber;
+list[i++] = AlienAnt;
+
+object ACTIVE;
+while(true)
+{
+ACTIVE = radar(list, 0, 360, 0, 15);
+if(ACTIVE!=null)
+{
+wait(1);
+message("PROTOTYPE REINFORCED GRABBER ROBOT ACTIVATED");
+wait(2.25);
+message("NO DIRECT CONTROL DRIVERS IMPLEMENTED");
+wait(2.25);
+message("CONTROLLED BY PROGRAMMING ONLY");
+wait(2);
+message("OVERRIDE - DISABLING ANALOG DISTRESS SIGNAL");
+wait(2.25);
+message("READY FOR PROGRAM INPUT IN 3");
+wait(1);
+message("2");
+wait(1);
+message("1");
+wait(1);
+message("SOFTWARE FRAMEWORK RUNNING");
+break;
+
+}
+}
+}

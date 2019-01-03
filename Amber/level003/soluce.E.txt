@@ -1,0 +1,15 @@
+\b;Walkthrough
+There is an anlien queen in the top right corner of the map. The mission begins with no other aliens than her and some worms, but she will start to produce wasps and ants immediately.
+Wasps will again try to steal your titanium cubes and nuclear cells.
+
+The phazer shooters are in the camp with the black box, north west of your ship, and they are extremely powerful. They also recharge their batteries and repair their armours automatically. Use your shooters to pick them off one by one, lead them do the minefield on the east side of the base, or force them to fire at each other or supporting buildings (Destroying the power station or repair center may help you a lot).
+If youre sneaky, you may try to take the black box and run. It's in the middle of the base.
+The derrick in the west of your ship is the only uranium source. There is no titanium under ground, and only few ore units on the surface, south of the map.
+There are also some titanium cubes in the base, but it is way too risky to retrieve them.
+Using the recycler to recycle wrecks is the best option to gather titanium.
+
+There is also a reinforced tracked grabber that may help you, around 222, 116. 
+Well, technically there's another one (-164, -195) but that one has some major design flaws resulting in its durability to be even lower than regular robots.
+
+\t;See also
+\l;Controls\u command;

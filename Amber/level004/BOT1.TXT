@@ -1,0 +1,117 @@
+extern void object::Attack( )
+{
+	int		listfirst[], j;
+	int		list[], i;
+	
+	object	target;	
+	point		center;	
+	point		lastPos;
+	point           truecenter;	
+	float		distCent;	
+	float		r;	
+
+	errmode(0); 
+	while ( ismovie() != 0 )  wait(1);
+
+
+	j = 0;
+listfirst[j++] = WingedShooter;
+listfirst[j++] = TrackedShooter;
+listfirst[j++] = WheeledShooter;
+listfirst[j++] = LeggedShooter;
+listfirst[j++] = WingedOrgaShooter;
+listfirst[j++] = TrackedOrgaShooter;
+listfirst[j++] = WheeledOrgaShooter;
+listfirst[j++] = LeggedOrgaShooter;
+listfirst[j++] = PracticeBot;
+listfirst[j++] = Me;
+
+
+i = 0;
+	list[i++] = WingedGrabber;
+	list[i++] = TrackedGrabber;
+	list[i++] = WheeledGrabber;
+	list[i++] = LeggedGrabber;
+	list[i++] = WingedShooter;
+	list[i++] = TrackedShooter;
+	list[i++] = WheeledShooter;
+	list[i++] = LeggedShooter;
+	list[i++] = WingedOrgaShooter;
+	list[i++] = TrackedOrgaShooter;
+	list[i++] = WheeledOrgaShooter;
+	list[i++] = LeggedOrgaShooter;
+	list[i++] = WingedSniffer;
+	list[i++] = TrackedSniffer;
+	list[i++] = WheeledSniffer;
+	list[i++] = LeggedSniffer;
+	list[i++] = Thumper;
+	list[i++] = PhazerShooter;
+	list[i++] = Recycler;
+	list[i++] = Shielder;
+	list[i++] = Subber;
+	list[i++] = Derrick;
+	list[i++] = BotFactory;
+	list[i++] = PowerStation;
+	list[i++] = Converter;
+	list[i++] = RepairCenter;
+	list[i++] = DefenseTower;
+	list[i++] = ResearchCenter;
+	list[i++] = RadarStation;
+	list[i++] = ExchangePost;
+	list[i++] = PowerPlant;
+	list[i++] = AutoLab;
+	list[i++] = NuclearPlant;
+	//list[i++] = PowerCell;
+	list[i++] = Titanium;
+
+
+	center = position;
+	truecenter = position;		
+				
+	distCent = 35; 	
+
+	lastPos = position;	
+	motor(0,0);			
+	while ( true )		
+	{
+
+		target = radar(listfirst, 0, 360, 0, 25);
+		if (target == null)
+		target = radar(list, 0, 360, 0, 25);
+		if (target == null)
+		{       
+			motor(0,0);
+			wait(0.7);
+		}
+		else
+		{   
+			turn(direction(target.position));
+			if(distance2d(position, target.position)<20)
+			{
+			aim(rand()*14-7);
+			fire(0.3+rand()*1.5);
+			if(rand()<0.2)
+			wait(1+rand()*2);
+			}
+			motor(1,1);
+			if(distance2d(position, target.position)<10 and distance2d(position, target.position) >= 4)
+			{motor(0,0); wait(rand()*0.5);}
+			else
+			if(distance2d(position, target.position)<4)
+			{
+			motor(-1,-1);  
+			wait(1+rand());
+			}     
+			wait(1+rand());
+			if(rand()<0.1)
+			{
+				turn(rand()*180-90);     
+				motor(1,1);        
+				wait(0.3+rand()*2);
+			} 
+			
+
+			        
+		}
+	}
+}

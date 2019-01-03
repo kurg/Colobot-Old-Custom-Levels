@@ -1,0 +1,18 @@
+extern void object::INFORMATION_RGBv1( )
+{
+message("INFORMATION IS IN THE PROGRAM CODE");
+wait(0.5);
+/*
+DEVELOPMENT NOTES:
+
+RGB - ReinforcedGrabberBot model 1. DEVELOPED FOR TESTING PURPOSES ONLY.
+
+If we are correct, this little robot will revolutionize the colonization process.
+It's the first of it's kind! Massive damage threshold will help it to endure the vicious sandstorms, and hostile environment. At least that's what we are trying to achieve.
+A few more tests and we'll be ready for mass production, and we won't have to give up the colonization process!
+We will keep on fixing the design and developing newer models, if this one doesn't meet the requirements. We're not developing the software though, and the direct control drivers are not implemented. 
+
+The robot is being transported to base Bravo 7 for testing.
+
+*/
+}
