@@ -1,0 +1,4 @@
+\b;Objective
+Do whatever you want. Jet engines operate normally in this mode.
+\t;See also
+\l;Controls\u command;.

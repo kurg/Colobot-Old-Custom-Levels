@@ -1,0 +1,6 @@
+\b;Walkthrough
+This is a sandbox map, there is no walkthrough available.
+If you want to end your mission, simply embark on your spaceship and take off.
+
+\t;See also
+\l;Controls\u command;

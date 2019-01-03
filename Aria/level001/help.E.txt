@@ -1,0 +1,17 @@
+\b;Objective
+Your first main objective is to collect one of the two \l;black boxes\u object\bbox; that were onboard the spaceship of the previous expedition. We're not sure if the ship managed to start, or if it's still deployed somewhere on the surface. We have readings assuring us that at least one of the black boxes is on the surface near your area. The location of the other one remains unclear. Bring one of them to the spaceship.
+The data recorded by either black box should explain what happened to previous expedition.
+
+The second main objective regards the mission of the previous expedition. They were to collect \l;organic matter\u object\bullet; samples. You need to collect 3 of those and bring them to your spaceship in order to proceed with the mission.
+We have some precautions for you. This planet is not as peaceful as it appears to be. It may be inhibited by hostile lifeforms.
+
+The planet:
+Aria is a planet that has its own ocean of crystal-clear water. The surface consists mainy of silicon and salts. The planet is relatively cold and the atmosphere is not dense, which is a problem for flying robots. It is confirmed that some organisms have adapted to live there.
+
+Other notes:
+Build a sniffer and find the titanium and energy deposits. Satellite scanner proves that some uranium deposits are present in the area too. Searching for resources underwater may be worthwhile too. Flying robots don't work well in this planet atmosphere, you'll probably want to rely on robots with tracks or wheels more.
+
+Stay safe and good luck!
+
+\t;See also
+\l;Controls\u command;.
