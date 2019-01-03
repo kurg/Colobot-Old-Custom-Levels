@@ -1,0 +1,18 @@
+\b;Walkthrough
+There are two ways through this mission, one with subber and less shooters,
+other is faster and riskier and involves more shooting.
+
+First way - In the bay, underwater next to your starting location are two organic matter
+The third one is in the valley of the wrecks, further on the other side of the bay (on the surface).
+Watch out for the odd spider there!
+The first black box is in the south-east lake near spiders, underwater.
+
+Second way - The island to the north west, swarming with ants has both alien nest which provides organic matter,
+and a black box. (Both on surface)
+
+There's also some TNT (on surface) and uranium ore (underwater) on the map. 
+In one of the bays there's also a Nuclear Cell underwater.
+The uranium deposits are near lake where spiders reside, and where the ants reside (whole island).
+
+\t;See also
+\l;Controls\u command;
