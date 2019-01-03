@@ -1,3 +1,4 @@
+
 //--------------------------------------------------------------------------------------------------------
 //Start Credits
 //If you are the creator of "Amber Levels"
@@ -9,7 +10,6 @@
 //If you have any questions, suggestions, or comments please post in the forum under "Workshop/Fan Levels"
 //End Credits
 //---------------------------------------------------------------------------------------------------------
-
 
 Title.E      text="Emergency"
 Resume.E     text="We stopped getting readings from the black box, like as if it disappeared. We would not call this an emergency situation, as we are aware you just loaded it onboard. Just report on its condition and you are free to launch."

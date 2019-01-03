@@ -1,3 +1,4 @@
+
 //--------------------------------------------------------------------------------------------------------
 //Start Credits
 //If you are the creator of "Amber Levels"
@@ -18,7 +19,10 @@ ScriptName.E text="Program"
 Instructions name="%lvl%/help.%lng%.txt"
 SoluceFile name="%lvl%/soluce.%lng%.txt"
 Satellite name="%lvl%/report.%lng%.txt"
+
 Loading name="%lvl%/prog.%lng%.txt"
+
+
 HelpFile name="cbot.txt"
 EndingFile   win=-1 lost=0
 

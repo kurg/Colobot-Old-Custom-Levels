@@ -1,0 +1,18 @@
+\b;Satellite Report
+Currently in a geo-stationary orbit of Aria.
+\c;
+\s;-> SURFACE\c;
+\tab;Temperature:      15.5C
+\tab;Atmosphere:       nitrogen, oxygen, helium
+\tab;Wind:             10.0 mps
+\tab;Titanium ore:     no information available
+\tab;Uranium ore:      no information available
+
+\s;-> SUBSOIL\c;
+\tab;Energy source:    some
+\tab;Titanium ore:     some
+\tab;Uranium ore:      some
+
+\s;-> ADDITIONAL INFORMATION\c;
+\tab;Detected:         giant ants, giant spiders
+\n;

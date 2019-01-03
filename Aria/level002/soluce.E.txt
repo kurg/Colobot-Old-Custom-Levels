@@ -1,0 +1,13 @@
+\b;Walkthrough
+First build a factory and a Sniffer. Look for Titanium and a ground power supply near your ship. 
+Make use of Uranium ore on the surface. Some uranium ore can be also found underwater.
+The great underground uranium deposit is on a plateau in the south west.
+There are no wrecks on this map. 
+
+Use a lab to discover organic cannon, and use it to clear the area.
+Be wary though, these aliens are smarter than usual. They will target offensive robots and your character from a longer distance,
+will try to avoid obstacles or being shot by not walking only in straight lines, and some of them will
+also attack titanium cubes, or power cells on sight. They may also randomly change their nesting location.
+
+\t;See also
+\l;Controls\u command;
