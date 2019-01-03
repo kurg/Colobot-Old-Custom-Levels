@@ -1,0 +1,23 @@
+\b;Satellite Report
+Currently Orbitting Cruel.
+\c;
+\s;-> SURFACE\c;
+\tab;Temperature:  35.1C / 79,300F
+\tab;Atmosphere:   Hydrogen, Nitrogen, Oxygen, Carbon Dioxide, Clouds and Ice
+\tab;Missions:     Voyager 1 & 2 - 1979
+\tab;Wind:         0.0 mps
+\tab;Titanium ore: some
+\tab;Uranium ore: some
+\tab;Energy: some
+
+\s;-> SUBSOIL\c;
+\tab;Energy source: plants decompose and become fuel 
+\tab;Titanium source: petrified wood
+\tab;Uranium source:  fungi feeds off radiation
+
+\s;-> ADDITIONAL INFORMATION\c;
+\tab; Terrain:    Warm and green. 
+\tab; Detected:   Derelicts.
+\tab; Detected:   Ants and Wasps!
+\tab; - Danger:   Immediate and pending!
+\n;
