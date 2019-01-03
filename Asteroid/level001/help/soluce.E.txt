@@ -1,0 +1,5 @@
+\b;Walkthrough
+Unfortunately the walkthrough provided for this mission is incomplete.
+
+\t;See also
+\l;Controls\u command;

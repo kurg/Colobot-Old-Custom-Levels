@@ -1,0 +1,24 @@
+\b;Analyse planétaire
+\c;
+\s;SURFACE\c;
+\tab;Température:      10.3C
+\tab;Atmosphère:       N2(80%), O2(16%), CO2(3%), autres(1%)
+\tab;Vent:             15 km/h
+\tab;Topographie:      Montagnes & vallées
+\tab;Eau:              Nombreux lacs
+
+\s;SOUS-SOL\c;
+\tab;Énergie:          isolé
+\tab;Titane:           isolé
+\tab;Uranium:          beaucoup
+
+\s;MATIÈRE ORGANIQUE\c;
+\tab;Vie végétale:     Plantes, arbres, champignons
+\tab;Vie animale:      Insectes géants (extra-terrestre)
+\tab; - Danger:        Élevé
+
+\s;INFORMATION ADDITIONNELLE\c;
+\tab;L'énergie est près du vaisseau.
+\tab;L'emplacement du titane est marqué.
+\tab;L'uranium est situé dans le sol rocheux des montagnes.
+

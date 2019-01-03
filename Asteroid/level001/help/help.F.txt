@@ -1,0 +1,4 @@
+\b;Objectifs
+1) Vous devez récupérer les morceaux du vaisseau que vous avez perdu lors de la collision avec l'astéroïde (\l;4 clés\u object\key;).
+2) Vous devez détruire toute forme extra-terrestre de la planète.
+3) Vous devez obtenir un morceau de la masse de metal inconnue (\l;boîte noire\u object\bbox;).

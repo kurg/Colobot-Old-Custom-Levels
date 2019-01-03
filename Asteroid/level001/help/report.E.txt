@@ -1,0 +1,24 @@
+\b;Satellite Report
+\c;
+\s;SURFACE\c;
+\tab;Temperature:      10.3C
+\tab;Atmosphere:       N2(80%), O2(16%), CO2(3%), others(1%)
+\tab;Vent:             0.0 mps
+\tab;Topography:       Mountains and valleys
+\tab;Water:            Lots of lakes
+
+\s;SUBSOIL\c;
+\tab;Énergie:          some
+\tab;Titane:           some
+\tab;Uranium:          a lot
+
+\s;ORGANIC MATTER\c;
+\tab;Vegetal lifeforms: Plants, trees, mushrooms
+\tab;Animal lifeforms:  Giant insects (extra terrestrial)
+\tab; - Danger:         immediate
+
+\s;ADDITIONAL INFORMATION\c;
+\tab;Energy close to spaceship.
+\tab;Titanium spot is marked.
+\tab;Uranium in the rocky soil in the mountains
+

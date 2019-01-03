@@ -1,0 +1,11 @@
+\b;Programmes de Houston
+Aucun programme n'a été développé pour cette situation inattendue.
+
+\b;Information de Houston
+Nous vous recommendons de créer vos propres programmes.
+Utilisez vos \l;blocs de titanium\u object\titan; pour créer un \l;derrick\u object\derrick; et un \l;convertiseur\u object\convert;.
+Vous avez l'autorisation d'effectuer des \l;recherches\u object\research; pour vous aider.
+
+\b;Information additionnelle
+Suivez le banc de terre dans le lac près du vaisseau pour trouver l'emplacement du \l;minerai de titanium\u object\titanore;.
+Soyez prudent !

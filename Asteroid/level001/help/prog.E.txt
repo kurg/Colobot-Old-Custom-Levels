@@ -1,0 +1,11 @@
+\b;Programs dispatched by Houston
+We did not develop a specific program inexpected situation.
+
+\b;Information from Houston
+We recommend to create your own programs.
+Use your \l;titanium cubes \u object\titan; to build a \l;derrick\u object\derrick; and a \l;converter\u object\convert;.
+You may conduct some \l;research\u object\research;.
+
+\b;Additional information
+The \l;titanium ore\u object\titanore; is on the island.
+Be careful !

@@ -1,0 +1,4 @@
+\b;From mission control
+1) Find some parts of the spaceship you have lost during a collision with an asteroid.(\l;4 keys\u object\key;).
+2) Eliminate all extraterestral lifeforms from the planet.
+3) Find the (\l;blackbox\u object\bbox;).

@@ -1,0 +1,2 @@
+Title.E text="Asteroid"
+Title.F text="Astéroïde"
