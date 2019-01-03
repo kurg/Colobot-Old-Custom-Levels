@@ -1,0 +1,18 @@
+\b; Satellite report
+Currently in the orbit of the geostationary planet Titan.
+\c;
+\t; -> SURFACE \c;
+Temperature: 21.3C
+Atmosphere: CO2, Hydrogen
+Wind: 1.9 m/s
+
+\t; -> RESOURCES \c;
+Energy source: a little
+Titanium ore: a little
+Uranium ore: a little
+
+\t; -> ADDITIONAL INFORMATION
+Detected: Alien Eggs
+\tab;Danger:   Immediate and pending!
+\t;
+\n;

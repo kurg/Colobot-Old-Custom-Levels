@@ -1,0 +1,5 @@
+\b;Rozwi¹zanie
+poswat wszystkie dzia³a na po³udnie a gdy pojawi¹ siê mrówki w³¹cz program.Masz jedn¹ minutê na w³o¿enie ogniw do wie¿ obronnych
+
+\t;Zobacz równie¿
+\l;Sterowanie\u command;

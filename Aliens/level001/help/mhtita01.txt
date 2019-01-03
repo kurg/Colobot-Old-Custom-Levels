@@ -1,0 +1,9 @@
+\b;Z Centrum Kontroli Misji
+Satelita obserwacyjny wykry³ du¿o jaj obcych zaczekaj a¿ siê cos z nich wykluje i atakuj, ma¿ 1 minute na w³o¿enie ogniw do wie¿ obronnych
+\b;Procedura
+po 1 minucie na radarze bêd¹ siê pokazywaæ mrówki
+
+Naciœniêcie klawisza \key;\key help;\norm; pozwala ponownie przejrzeæ te instrukcje na Twoim osobistym komunikatorze SatCom \button 63;.
+
+\t;Zobacz równie¿
+\l;Sterowanie\u command;

@@ -1,0 +1,9 @@
+\b; From Mission Control Center
+Observing satellite has detected a lot of alien eggs, wait for something to hatch and attack, have 1 minute to put the cells to defense towers
+\t; Procedure:
+After 1 minute on the radar, you will be shown ants
+
+Pressing \key; \key help; \norm; You can revisit these instructions on your personal SatCom \button 63;
+
+\t; See also:
+\l; Control \u command;

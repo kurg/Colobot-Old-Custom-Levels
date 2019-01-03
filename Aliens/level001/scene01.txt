@@ -1,0 +1,244 @@
+Title.F      text="Alerte"
+Resume.F     text="Alerte, vous base est attaquée ..."
+Title.E      text="aliens"
+Resume.E     text="atack!!!"
+HelpFile     name="cbot.txt"
+EndingFile   win=-1 lost=0
+
+AmbiantColor   air=102;102;102;102 water=20;20;20;20  // grey
+BackColor      air=0;0;0;0 water=107;84;127;0  // magenta
+FogColor       air=0;0;0;0 water=107;84;127;0  // magenta
+VehicleColor   color=200;196;174;0
+InsectColor    color=200;164;83;0
+DeepView       air=200.00 water=25.00 
+FogStart       air=0.8 water=0.5
+SecondTexture  rank=1
+Background     image="%user%\back01.bmp"
+FrontsizeName  image="lens1.tga"
+Planet         pos=0.00;0.70 dim=0.03 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=1.00;0.60 dim=0.02 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=1.20;0.40 dim=0.03 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=2.00;0.40 dim=0.03 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=2.50;0.50 dim=0.04 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=3.00;0.30 dim=0.04 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=3.85;0.30 dim=0.06 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=4.00;0.70 dim=0.02 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=4.10;0.50 dim=0.03 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=5.30;0.30 dim=0.08 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+
+TerrainGenerate     vision=400.00 depth=1 hard=0.3
+TerrainWind         speed=0.0;0.0
+TerrainBlitz        sleep=0 delay=100 magnetic=0
+TerrainRelief       image="%user%\relief01.bmp" factor=1.0
+TerrainResource     image="%user%\sample03\res01.bmp"
+TerrainWater        image="%user%\water01.bmp" level=5.5 moveX=1.0 moveY=0.3 color=129;113;163;0
+TerrainInitTextures image="%user%\terra.bmp" dx=1 dy=1 table=1
+TerrainCreate
+
+GroundSpot pos=  0.00;-100.0 radius=25 color=128;128;255
+GroundSpot pos= 50.00;-100.0 radius=25 color=128;255;128
+GroundSpot pos=-50.00;-100.0 radius=25 color=128;128;255
+GroundSpot pos=  0.00;  37.5 radius=25 color=128;255;128
+GroundSpot pos=-12.50;-150.0 radius=12 color=128;255;128
+GroundSpot pos=150.00;-125.0 radius=25 color=128;128;255
+GroundSpot pos= 75.00;-225.0 radius=50 color=128;200;200
+GroundSpot pos= 85.00; -57.5 radius= 6 color=160;128;160
+
+BeginObject
+CreateObject pos=-348;344 dir=0,17 type=AlienAnt
+CreateObject pos=-306;338 dir=0,89 type=AlienAnt
+CreateObject pos=-336;316 dir=1,57 type=AlienAnt
+CreateObject pos=-290;312 dir=1,23 type=AlienAnt
+CreateObject pos=-312;364 dir=0,84 type=AlienAnt
+CreateObject pos=-276;350 dir=0,82 type=AlienAnt
+CreateObject pos=-272;326 dir=1,25 type=AlienAnt
+CreateObject pos=-290;374 dir=0,67 type=AlienAnt
+CreateObject pos=-324;326 dir=1,91 type=AlienAnt
+CreateObject pos=-338;360 dir=0,25 type=AlienAnt
+CreateObject pos=-296;352 dir=1,5 type=AlienAnt
+CreateObject pos=-296;334 dir=0 type=AlienWorm
+CreateObject pos=-318;354 dir=0,84 type=AlienWorm
+CreateObject pos=-336;338 dir=1,7 type=AlienWorm
+CreateObject pos=-316;314 dir=1,75 type=AlienWorm
+CreateObject pos=-280;376 dir=0,55 type=AlienWorm
+CreateObject pos=-354;334 dir=1,94 type=AlienSpider
+CreateObject pos=-324;344 dir=0 type=AlienNest
+CreateObject pos=-356;234 dir=0 type=Mushroom2
+CreateObject pos=-352;234 dir=0 type=Mushroom2
+CreateObject pos=-348;236 dir=0 type=Mushroom2
+CreateObject pos=-344;236 dir=0 type=Mushroom2
+CreateObject pos=-344;236 dir=0 type=Mushroom2
+CreateObject pos=-342;232 dir=0 type=Mushroom2
+CreateObject pos=-336;230 dir=0 type=Mushroom2
+CreateObject pos=-334;230 dir=0 type=Mushroom2
+CreateObject pos=-332;226 dir=0 type=Mushroom2
+CreateObject pos=-326;222 dir=0 type=Mushroom2
+CreateObject pos=-322;220 dir=0 type=Mushroom2
+CreateObject pos=-322;220 dir=0 type=Mushroom2
+CreateObject pos=-318;220 dir=0 type=Mushroom2
+CreateObject pos=-316;218 dir=0 type=Mushroom2
+CreateObject pos=-312;218 dir=0 type=Mushroom2
+CreateObject pos=-310;216 dir=0 type=Mushroom2
+CreateObject pos=-300;214 dir=0 type=Mushroom2
+CreateObject pos=-296;214 dir=0 type=Mushroom2
+CreateObject pos=-138;234 dir=0 type=Mushroom2
+CreateObject pos=-138;240 dir=0 type=Mushroom2
+CreateObject pos=-138;240 dir=0 type=Mushroom2
+CreateObject pos=-138;238 dir=0 type=Mushroom2
+CreateObject pos=-138;242 dir=1,5 type=Mushroom2
+CreateObject pos=-138;248 dir=1,5 type=Mushroom2
+CreateObject pos=-138;250 dir=1,5 type=Mushroom2
+CreateObject pos=-138;254 dir=0 type=Mushroom2
+CreateObject pos=-138;254 dir=0 type=Mushroom2
+CreateObject pos=-138;254 dir=1,5 type=Mushroom2
+CreateObject pos=-138;258 dir=1,5 type=Mushroom2
+CreateObject pos=-138;262 dir=1,5 type=Mushroom2
+CreateObject pos=-138;266 dir=1,5 type=Mushroom2
+CreateObject pos=-138;270 dir=1,5 type=Mushroom2
+CreateObject pos=-138;274 dir=1,5 type=Mushroom2
+CreateObject pos=-138;278 dir=0 type=Mushroom2
+CreateObject pos=-326;226 dir=1,25 type=Mushroom2
+CreateObject pos=-330;228 dir=1,25 type=Mushroom2
+CreateObject pos=-332;230 dir=1 type=Mushroom2
+CreateObject pos=-336;230 dir=1,25 type=Mushroom2
+CreateObject pos=-340;232 dir=1 type=Mushroom2
+CreateObject pos=-344;234 dir=1,15 type=Mushroom2
+CreateObject pos=-350;236 dir=1 type=Mushroom2
+CreateObject pos=-352;236 dir=1 type=Mushroom2
+CreateObject pos=-308;174 dir=0 type=Mushroom1
+CreateObject pos=-302;182 dir=0 type=Mushroom1
+CreateObject pos=-292;186 dir=1,5 type=Mushroom1
+CreateObject pos=-284;192 dir=0 type=Mushroom1
+CreateObject pos=-274;196 dir=0 type=Mushroom1
+CreateObject pos=-260;200 dir=0 type=Mushroom1
+CreateObject pos=-250;200 dir=0 type=Mushroom1
+CreateObject pos=-242;206 dir=0 type=Mushroom1
+CreateObject pos=-224;202 dir=1,25 type=Mushroom1
+CreateObject pos=-216;202 dir=0 type=Mushroom1
+CreateObject pos=-212;200 dir=0 type=Mushroom1
+CreateObject pos=-198;190 dir=1 type=Mushroom1
+CreateObject pos=-194;180 dir=0 type=Mushroom1
+CreateObject pos=-38;236 dir=1,5 type=Mushroom1
+CreateObject pos=-36;264 dir=0 type=Mushroom1
+CreateObject pos=-30;252 dir=1,25 type=Mushroom1
+CreateObject pos=-40;252 dir=0 type=Mushroom1
+CreateObject pos=-34;248 dir=1 type=Mushroom1
+CreateObject pos=-36;276 dir=0 type=Mushroom1
+CreateObject pos=-270;128 dir=0 type=SpaceShip run=0
+CreateObject pos=-208;-78 dir=0,21 type=Me range=30
+CreateObject pos=52;-282 dir=1,62 type=PowerPlant power=1
+CreateObject pos=62;-286 dir=1,42 type=PowerStation power=1
+CreateObject pos=274;-140 dir=0,5 type=Converter
+CreateObject pos=280;-138 dir=0,56 type=Derrick
+CreateObject pos=56;-280 dir=0 type=PowerCaptor
+CreateObject pos=276;-134 dir=0 type=PowerCaptor
+CreateObject pos=174;200 dir=0 type=PowerCaptor
+CreateObject pos=172;200 dir=0 type=Derrick
+CreateObject pos=176;208 dir=0 type=NuclearPlant
+CreateObject pos=180;208 dir=0 type=PowerCaptor
+CreateObject pos=-200;-74 dir=0,75 type=Home
+CreateObject pos=132;-230 dir=1,72 type=WingedOrgaShooter
+CreateObject pos=272;186 dir=0,31 type=WingedSniffer
+CreateObject pos=-340;-124 dir=1,55 type=PracticeBot
+CreateObject pos=216;-168 dir=0,81 type=WingedGrabber
+CreateObject pos=-132;-114 dir=0,65 type=ResearchCenter
+CreateObject pos=-270;72 dir=1,5 type=Houston
+CreateObject pos=-226;172 dir=0,67 type=Portico run=0
+CreateObject pos=-246;88 dir=1,59 type=Tech range=30
+CreateObject pos=-230;114 dir=1,3 type=Tech range=30
+CreateObject pos=-302;108 dir=1,75 type=Tech range=30
+CreateObject pos=-300;160 dir=0,25 type=Tech range=30
+CreateObject pos=-276;178 dir=0,6 type=Tech range=30
+CreateObject pos=-214;132 dir=1 type=Tech range=30
+CreateObject pos=-276;102 dir=0,19 type=Tech range=30
+CreateObject pos=-196;142 dir=0,9 type=Tech range=30
+CreateObject pos=-284;164 dir=0 type=Tech range=30
+CreateObject pos=-306;142 dir=0 type=Tech range=30
+CreateObject pos=-312;132 dir=0 type=Tech range=30
+CreateObject pos=-300;132 dir=0,19 type=Tech range=30
+CreateObject pos=-144;-100 dir=0,72 type=BotFactory
+CreateObject pos=-122;-116 dir=0,65 type=RepairCenter
+CreateObject pos=-136;-98 dir=0,62 type=AutoLab
+CreateObject pos=-218;-84 dir=0,3 type=Greenery4
+CreateObject pos=-240;-236 dir=1,75 type=Tree0
+CreateObject pos=-232;-244 dir=0,6 type=Tree0
+CreateObject pos=-248;-252 dir=1,25 type=Tree0
+CreateObject pos=-244;-242 dir=0,35 type=Tree0
+CreateObject pos=-192;-82 dir=0,58 type=Tree0
+CreateObject pos=62;-236 dir=0,13 type=Greenery4
+CreateObject pos=144;-38 dir=0,7 type=Greenery4
+CreateObject pos=-26;144 dir=1,02 type=Greenery4
+CreateObject pos=-234;-132 dir=0,12 type=Greenery13
+CreateObject pos=-128;16 dir=1,63 type=Greenery13
+CreateObject pos=52;24 dir=1 type=Greenery13
+CreateObject pos=300;64 dir=0,52 type=Greenery13
+CreateObject pos=210;182 dir=1,73 type=Greenery8
+CreateObject pos=-348;-130 dir=1,67 type=Greenery9
+
+
+CreateLight dir= 0.0;-1.0; 0.0 color= 0.63; 0.63; 0.63 type=Terrain
+CreateLight dir= 1.0; 0.0;-1.0 color=-0.70;-0.70;-0.70 type=Terrain
+CreateLight dir=-1.0; 0.0; 1.0 color= 1.40; 1.40; 1.40 type=Terrain
+CreateLight dir=-1.0;-1.0; 1.0 color= 0.56; 0.56; 0.56 type=Object
+CreateLight dir= 1.0;-1.0; 1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir=-1.0;-1.0;-1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir= 1.0;-1.0;-1.0 color= 0.16; 0.16; 0.16 type=Object
+WaterColor color=-0.1;-0.6;-0.1
+MapColor floor=165;142;107 water=154;235;255
+
+NewScript name="%user%\skill.txt" type=WheeledShooter
+NewScript name="%user%\skill.txt" type=TrackedShooter
+NewScript name="%user%\skill.txt" type=WingedShooter
+NewScript name="%user%\skill.txt" type=LeggedShooter
+NewScript name="%user%\skill.txt" type=WheeledOrgaShooter
+NewScript name="%user%\skill.txt" type=TrackedOrgaShooter
+NewScript name="%user%\skill.txt" type=WingedOrgaShooter
+NewScript name="%user%\skill.txt" type=LeggedOrgaShooter
+NewScript name="titan3.txt" type=WheeledGrabber
+NewScript name="titan3.txt" type=TrackedGrabber
+NewScript name="titan3.txt" type=WingedGrabber
+NewScript name="titan3.txt" type=LeggedGrabber
+NewScript name="charge2.txt" type=All
+NewScript name="exchg1.txt" type=WheeledGrabber
+NewScript name="exchg1.txt" type=TrackedGrabber
+NewScript name="exchg1.txt" type=WingedGrabber
+NewScript name="exchg1.txt" type=LeggedGrabber
+
+EnableBuild type=ResearchCenter
+EnableBuild type=BotFactory
+EnableBuild type=Converter
+EnableBuild type=PowerStation
+EnableBuild type=RadarStation
+EnableBuild type=RepairCenter
+EnableBuild type=DefenseTower
+EnableBuild type=PowerPlant
+EnableBuild type=Derrick
+EnableBuild type=NuclearPlant
+EnableBuild type=PowerCaptor
+EnableBuild type=FlatGround
+EnableBuild type=Flag
+
+EnableResearch type=TRACKER
+EnableResearch type=WINGER
+EnableResearch type=THUMPER
+EnableResearch type=SHOOTER
+EnableResearch type=TOWER
+EnableResearch type=SHIELDER
+EnableResearch type=ATOMIC
+EnableResearch type=iPAW
+EnableResearch type=iGUN
+
+DoneResearch type=TRACKER
+DoneResearch type=WINGER
+DoneResearch type=THUMPER
+DoneResearch type=SHOOTER
+DoneResearch type=TOWER
+DoneResearch type=SHIELDER
+DoneResearch type=ATOMIC
+DoneResearch type=iPAW
+DoneResearch type=iGUN
+DoneResearch type=SNIFFER
+
+EndMissionTake pos=0.00;0.00 dist=25000.00 type=Me lost=0
+EndMissionTake pos=0.00;0.00 dist=1000.00 type=AlienEgg min=0 max=0
+EndMissionTake pos=0.00;0.00 dist=1000.00 type=AlienAnt min=0 max=0

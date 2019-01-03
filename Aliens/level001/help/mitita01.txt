@@ -1,0 +1,20 @@
+\b;Raport z satelity
+Obecnie na orbicie geostacjonarnej planety Tytania.
+\c;
+\s;-> POWIERZCHNIA\c;
+\tab;Temperatura:      21,3C
+\tab;Atmosfera:        co2, wodór
+\tab;Wiatr:            1,9 m/s
+\tab;Ruda tytanu:      trochê
+\tab;Ruda uranu:       brak
+
+\s;-> PODGLEBIE\c;
+\tab;ród³o energii:   troche
+\tab;Ruda tytanu:      troche
+\tab;Ruda uranu:       troche
+
+\s;-> DODATKOWE INFORMACJE\c;
+\tab;Wykryto:          olbrzymie mrówki
+\tab;  - Zagro¿enie:   niebezpoœrednie
+\tab;Wykryto:         jaja obcych
+\n;
