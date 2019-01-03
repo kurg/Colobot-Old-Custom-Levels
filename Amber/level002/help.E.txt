@@ -1,0 +1,19 @@
+\b;Objective
+Your objective is to find four remaining practice robots that are hiding somewhere in the canyon, and guide them to your ship.
+The data from the previous robots was incomplete, but we learned about the location of remaining stray practice robots which are holding the required encrypted information. It seems that unattended for years they fell into abandoned canyon and unable to climb steep walls, they decided to stayed there. We believe that these events caused their safety protocols to turn on automatically, and so you will not have direct control over these robots. 
+
+The safety protocol is an emergency program that helps robot to avoid moving targets and it cannot be shut down manually. The robot is programmed to run away from any movement on ground surface. It will also react in an odd fashion to airborne treaths. To shut down the protocol and embark the robots, you will have to trick them into driving near the spaceship, close enough for us to be able to connect to them directly and override the emergency protocol.
+
+Your spaceship will land in this exact canyon. The weather conditions are good, the sandstorm does not affect the area down there. It's safe to take your helmet off.
+
+
+The planet:
+Amber is a desert planet, scattered with ponds of boiling oil. The pressure is same as on earth, atmosphere is dense and consists mainly of nitrogen, carbon dioxide and oxygen in right proportions for humans to be able to breathe, yet the planet is engulfed in eternal vision-hindering sandstorm.
+
+Other notes:
+Beware of the mines which were set by previous expedition. After all these years some ants may have wandered down the canyon too.
+
+Stay safe and good luck!
+
+\t;See also
+\l;Controls\u command;.

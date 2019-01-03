@@ -1,0 +1,21 @@
+\b;Objective
+The data we decrypted from the robots you retrieved contains several logs and lots of information regarding former colonists of this planet. We learned a lot about the local alien species and trouble the colonists had with the robots. And we know they had trouble with their robots in all colonies across the planet. Robots started to disobey orders, followed their own programs and eventually took over control of the situation. It is unclear if it has something to do with the alien activity in the area. The black box that was left in one of encampments can finish all robot related problems on this planet. It will also mean an end to colonization process, but we have no other way to stop the problem now. Some robots are stationing in the former expedition camp north west of your location. The black box is there too.
+
+These particular robots were all identified as phazer shooters. They are heavy and well armed, but slow. We may be able to shut down robots on the whole planet remotely if we decrypt the codes inside this black box. Disabling them seems to be the only way, as they're even more dangerous than aliens. We will be able to end our evacuation efforts then. To you, it means that you'll be able to continue your mission on another planet.  Your objective is to find the \l;black box\u object\bbox; you can also secure the area by eliminating hostile robots, but it is not required, as they will be shut down with the rest  remotely from the orbit, when we decrypt the data inside black box. Take caution. You may try to eliminate them with your own robots, with their own fire, or simply by taking care of their energy cells. There's a minefield nearby too.
+
+The planet:
+Amber is a desert planet, scattered with ponds of boiling oil. The pressure is same as on earth, atmosphere is dense and consists mainly of nitrogen, carbon dioxide and oxygen in right proportions for humans to be able to breathe, yet the planet is engulfed in eternal vision-hindering sandstorm, so you'd better keep your helmet on.
+
+Other notes:
+These robots are extremely powerful, and they were produced for a reason. This reason was probably to fend off agressive aliens, which means there may still be some of them in the area.
+
+We also get some weak distress signal from two locations near your area. One is around position (-160, -200), while the other, very similiar is around (205, 100). These are basic (and deprecated) distress signals used by minor equipment, when left alone for some time. We don't get these kind of primitive signals from advanced constructions or robots. Normally functioning robots used by colonists, even without power send far more advanced distress signals when they choose to do so. We speculate it may be some ruins or damaged buildings, it may be worth to discover this matter further.
+
+There's an abandoned derrick, west of your location, use it to supply yourself with uranium. This site lacks titanium ore deposits, so make use of recycler bot, as there are tons of robot wrecks in the sand on the whole planet.
+
+Forecast: Expect strong wind. There's also a weird sandstorm incoming. However you should be able to take off before it hits. Be cautionous.
+
+Stay safe and good luck!
+
+\t;See also
+\l;Controls\u command;.

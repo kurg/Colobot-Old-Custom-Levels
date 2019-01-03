@@ -1,0 +1,480 @@
+Title.E      text="Out there"
+Resume.E     text="Establish a base, then find and rescue the lost robots, that are out there in the sandstorm. "
+ScriptName.E text="Program"
+
+Instructions name="%lvl%/help.%lng%.txt"
+SoluceFile name="%lvl%/soluce.%lng%.txt"
+Satellite name="%lvl%/report.%lng%.txt"
+HelpFile name="cbot.txt"
+EndingFile   win=-1 lost=0
+
+Audio filename="%chap%/music/Amber15.ogg"
+
+AmbientColor   air=1;0.267;0;0.400 water=0.078;0.078;0.078;0.078
+FogColor       air=255;165;50 water=30;30;30;0 
+VehicleColor   color=255;165;0;0  
+InsectColor    color=12;10;10;0
+DeepView       air=85.00 water=2.00 
+FogStart       air=0.1 water=0.05
+SecondTexture  rank=4
+Background     image="back01.png"
+ForegroundName image="lens1.png"
+
+
+
+
+TerrainGenerate     vision=250.00 depth=1 hard=0.2
+TerrainWind speed= 30;26
+TerrainRelief       image="%lvl%/relief01.bmp" factor=1.0 border=0
+TerrainResource 	image="%lvl%/res01.bmp"
+TerrainWater	    image="%chap%/oil.png" level=33.7 moveX=0.05 moveY=0.1 air=TO water=TO color=20;20;20;0 brightness=0.1
+TerrainInitTextures image="%chap%/terra.png" dx=1 dy=1 table=1
+TerrainLava mode=1
+
+
+TerrainCreate
+
+GroundSpot color=255;0;0 min=-5 max=5 smooth=10
+
+CreateFog pos=-257;-224 height=1.8 dim=260 delay=2.0 type=2
+CreateFog pos=-248;-234 height=2.8 dim=185 delay=1.5 type=3
+CreateFog pos=-195;-175.6 height=2.7 dim=320 delay=3.0 type=2
+CreateFog pos=-210;-198 height=1.7 dim=195 delay=1.0 type=3
+
+CreateFog pos=54;128 height=10.5 dim=325 delay=2.0 type=3
+
+CreateFog pos=-122;70 height=12.5 dim=275 delay=1.0 type=2
+
+CreateFog pos=-175;-165.6 height=1.7 dim=240 delay=3.0 type=2
+CreateFog pos=-210;-248 height=1.9 dim=185 delay=1.0 type=3
+CreateFog pos=-185;-168.6 height=4.5 dim=295 delay=3.0 type=2
+CreateFog pos=-211;-232 height=2.8 dim=395 delay=1.0 type=3
+
+MaxFlyingHeight max=47.2
+
+BeginObject
+CreateObject pos=317.5;295 dir=0 type=SpaceShip run=11
+
+CreateObject pos=317.5;298.25 dir=1.5 type=Me range=30 magnifyDamage=10
+
+CreateObject pos=314.25;298.25 dir=1.5 type=TrackedGrabber power=20
+CreateObject pos=320.75;298.25 dir=1.5 type=WheeledGrabber power=20
+CreateObject pos=315;292.5 dir=0 type=Titanium
+CreateObject pos=313.75;292.5 dir=0 type=Titanium
+CreateObject pos=315;291.25 dir=0 type=Titanium
+CreateObject pos=313.75;291.25 dir=0 type=Titanium
+CreateObject pos=320;292.5 dir=0 type=Titanium
+CreateObject pos=321.25;292.5 dir=0 type=Titanium
+CreateObject pos=320;291.25 dir=0 type=Titanium
+CreateObject pos=321.25;291.25 dir=0 type=Titanium
+
+//CreateObject pos=-100;-100 dir=0.21 type=Me range=30
+
+CreateObject pos=-274.44;-340.78 dir=1.54 type=PowerStation power=0.3 selectable=0
+CreateObject pos=-262.22;-340.44 dir=1.94 type=PowerPlant power=0.2 selectable=0
+CreateObject pos=-258.89;-330.56 dir=1.8 type=Vault selectable=0
+CreateObject pos=-274.44;-354.44 dir=1.05 type=Vault selectable=0
+CreateObject pos=-251.11;-335.56 dir=1.99 type=ExchangePost selectable=0
+CreateObject pos=-255.56;-352.22 dir=1.99 type=RuinRadar selectable=0
+CreateObject pos=-268.56;-324.44 dir=0.71 type=Converter selectable=0
+CreateObject pos=-287.78;-324.44 dir=0.17 type=Derrick selectable=0
+CreateObject pos=-263.33;-352.22 dir=1.55 type=RuinConvert
+CreateObject pos=-284.44;-340 dir=1.72 type=Vault selectable=0
+//CreateObject pos=-275.56;-332.22 dir=0.02 type=StartArea selectable=0
+CreateObject pos=-252.22;-345.72 dir=0.99 type=Barrier0
+CreateObject pos=-282.22;-355.56 dir=1.87 type=Barrier1
+
+//CreateObject pos=-276;-68 dir=0.21 type=Me range=30
+CreateObject pos=-286;-80 dir=0.07 type=WingedGrabber power=0 shield=0.3 proxyActivate=1 proxyDistance=20
+
+
+CreateObject pos=244;-130 dir=0.86 type=TNT
+CreateObject pos=250;-124.23 dir=0.94 type=TNT
+CreateObject pos=246.92;-130.38 dir=1.49 type=TNT
+CreateObject pos=242.31;-124.23 dir=0.23 type=TNT
+CreateObject pos=245.38;-121.92 dir=0.5 type=TNT
+CreateObject pos=-183;153 dir=0.51 type=PowerCell power=0.4
+CreateObject pos=-197;127 dir=1.72 type=PowerCell power=0.7
+CreateObject pos=-190.77;132.69 dir=1.86 type=WreckBotr1
+CreateObject pos=-176.92;162.69 dir=0.9 type=WreckBotr2
+CreateObject pos=-174.62;152.69 dir=0.9 type=WreckBotw2
+CreateObject pos=-187.69;129.62 dir=1.33 type=WreckBotw2
+CreateObject pos=-185.38;144.23 dir=0.33 type=WreckBotw1
+CreateObject pos=-182.31;135.77 dir=1.16 type=WreckBott2
+CreateObject pos=-43.08;270.38 dir=0.68 type=RuinBotFactory
+CreateObject pos=-51.54;275.77 dir=0.56 type=RuinDoor
+CreateObject pos=-62.31;276.54 dir=0.22 type=RuinConvert
+CreateObject pos=-52.31;269.62 dir=1.25 type=RuinRadar
+CreateObject pos=-69.23;266.54 dir=1.95 type=RuinSupport
+CreateObject pos=-62.31;267.31 dir=1.22 type=WreckBotr1
+CreateObject pos=-43.08;264.23 dir=0.07 type=WreckBott1
+CreateObject pos=-178.46;145.77 dir=0.86 type=WreckBott1
+CreateObject pos=-196.92;137.31 dir=1.95 type=WreckBott1
+CreateObject pos=-48.46;266.54 dir=0.85 type=WreckBotw2
+CreateObject pos=-57.69;266.54 dir=0.58 type=RuinSupport
+CreateObject pos=-316.15;-30.38 dir=1.9 type=WreckBotw1
+CreateObject pos=347.69;-23.46 dir=0.4 type=WreckBotr1
+CreateObject pos=307.69;-301.92 dir=1.72 type=WreckBotr2
+CreateObject pos=-328.46;305 dir=0.79 type=WreckBott1
+CreateObject pos=-212.31;318.08 dir=0.03 type=WreckBott1
+CreateObject pos=-355.38;-149.62 dir=0.7 type=WreckBott1
+CreateObject pos=-286.15;-199.62 dir=1.51 type=WreckBotr2
+CreateObject pos=-173.85;-65.77 dir=0.9 type=WreckBotr2
+CreateObject pos=299.23;73.46 dir=0 type=WreckBotr1
+CreateObject pos=300;111.15 dir=0.25 type=WreckBotr2
+CreateObject pos=291.54;92.69 dir=0.89 type=WreckBotr2
+CreateObject pos=293.08;104.23 dir=0.85 type=WreckBotw1
+CreateObject pos=377.69;150.38 dir=0.5 type=WreckBotw1
+CreateObject pos=322.31;168.85 dir=0.13 type=WreckBott1
+CreateObject pos=100.77;-329.62 dir=1.08 type=WreckBott1
+CreateObject pos=137.69;-164.23 dir=2 type=WreckBotr2
+CreateObject pos=-83.08;271.92 dir=0.42 type=RuinConvert
+CreateObject pos=-30;41.92 dir=0.93 type=WreckBotw2
+CreateObject pos=-9.23;34.23 dir=0.23 type=WreckBotw2
+CreateObject pos=19.23;26.54 dir=1.88 type=WreckBotw1
+CreateObject pos=115.38;-86.54 dir=0.85 type=WreckBotw1
+CreateObject pos=-346.92;69.62 dir=1.4 type=WreckBotw1
+CreateObject pos=-142.31;345.77 dir=0.76 type=WreckBotw1
+CreateObject pos=-350.92;-254.23 dir=1.92 type=WreckBotw1
+CreateObject pos=350;-95 dir=1.66 type=WreckBotw1
+
+CreateObject pos=-320;-25 dir=1.99 type=ApolloAntenna
+CreateObject pos=74.62;-24.23 dir=0.82 type=ExchangePost selectable=0
+
+//CreateObject pos=-322.31;108.08 dir=0.13 type=RadarStation //selectable=0
+
+
+
+CreateObject pos=-223.08;81.15 dir=0.02 type=Greenery4
+CreateObject pos=-226.92;74.23 dir=0.22 type=Greenery4
+CreateObject pos=-224.62;90.38 dir=0.87 type=Greenery4
+CreateObject pos=-228.46;81.15 dir=1.99 type=Greenery5
+CreateObject pos=-113.85;201.15 dir=1.98 type=Greenery8
+CreateObject pos=202.31;73.46 dir=0.87 type=Greenery8
+CreateObject pos=229.23;127.31 dir=0.19 type=Greenery8
+CreateObject pos=237.69;98.08 dir=0.33 type=Greenery9
+CreateObject pos=219.23;96.54 dir=0.88 type=Greenery9
+CreateObject pos=-99.23;119.62 dir=1.79 type=Greenery9
+CreateObject pos=3.85;203.46 dir=0.87 type=Greenery9
+CreateObject pos=15.38;175 dir=0.04 type=Greenery9
+CreateObject pos=84.62;198.85 dir=1.29 type=Greenery9
+CreateObject pos=22.31;268.85 dir=0.76 type=Greenery8
+CreateObject pos=-63.85;190.38 dir=1.7 type=Greenery8
+CreateObject pos=-123.85;250.38 dir=1.02 type=Greenery8
+CreateObject pos=-217.69;224.23 dir=0.03 type=Greenery8
+CreateObject pos=-333.08;175 dir=0.4 type=Greenery9
+CreateObject pos=-293.08;203.46 dir=0.6 type=Greenery9
+CreateObject pos=-333.85;-60.38 dir=1.58 type=Greenery9
+CreateObject pos=-267.69;-59.62 dir=1.85 type=Greenery9
+CreateObject pos=-336.15;-212.69 dir=1.54 type=Greenery8
+CreateObject pos=-310.77;-222.69 dir=0.25 type=Greenery8
+CreateObject pos=-298.46;-165.77 dir=1.55 type=Greenery8
+CreateObject pos=-363.08;-105.77 dir=0.96 type=Greenery8
+CreateObject pos=-214.62;-258.08 dir=0.16 type=Greenery8
+CreateObject pos=-165.38;-308.85 dir=0.87 type=Greenery8
+CreateObject pos=-333.08;-291.15 dir=1.55 type=Greenery8
+CreateObject pos=-98.46;-332.69 dir=1.72 type=Greenery8
+CreateObject pos=-50;-283.46 dir=0.96 type=Greenery8
+CreateObject pos=-243.85;-324.23 dir=1.68 type=Greenery8
+CreateObject pos=-295.38;-339.62 dir=0.79 type=Greenery8
+CreateObject pos=-265.38;-305.77 dir=1.48 type=Greenery9
+CreateObject pos=-186.15;-345 dir=0.18 type=Greenery9
+CreateObject pos=-128.46;-319.62 dir=1.63 type=Greenery9
+CreateObject pos=41.54;-285 dir=0.61 type=Greenery9
+CreateObject pos=104.62;-233.46 dir=1.46 type=Greenery9
+CreateObject pos=226.92;-185 dir=0.86 type=Greenery9
+CreateObject pos=227.69;-277.31 dir=0.18 type=Greenery9
+CreateObject pos=307.69;-247.31 dir=1.68 type=Greenery9
+CreateObject pos=345.38;-166.54 dir=1.06 type=Greenery9
+CreateObject pos=272.31;-55.77 dir=0.02 type=Greenery9
+CreateObject pos=338.46;-91.15 dir=0.78 type=Greenery9
+CreateObject pos=182.31;-93.46 dir=1.27 type=Greenery9
+CreateObject pos=173.85;-17.31 dir=1.95 type=Greenery9
+CreateObject pos=352.31;46.54 dir=0 type=Greenery9
+CreateObject pos=359.23;98.85 dir=0.64 type=Greenery9
+CreateObject pos=255.38;2.69 dir=0.99 type=Greenery9
+CreateObject pos=79.23;107.31 dir=1.8 type=Greenery9
+CreateObject pos=132.31;107.31 dir=0.63 type=Greenery9
+CreateObject pos=39.23;60.38 dir=1.01 type=Greenery9
+CreateObject pos=-72.31;100.38 dir=0.76 type=Greenery9
+CreateObject pos=-156.92;54.23 dir=1 type=Greenery9
+CreateObject pos=-205.38;53.46 dir=1.8 type=Greenery9
+CreateObject pos=353.85;222.69 dir=0.64 type=Greenery8
+CreateObject pos=316.15;235.77 dir=0.91 type=Greenery8
+CreateObject pos=295.38;273.46 dir=0.11 type=Greenery8
+CreateObject pos=358.46;298.85 dir=0.85 type=Greenery8
+CreateObject pos=280;331.92 dir=1.02 type=Greenery8
+CreateObject pos=304.62;352.69 dir=0.13 type=Greenery8
+CreateObject pos=346.15;315 dir=0.5 type=Greenery8
+CreateObject pos=366.92;326.54 dir=1.17 type=Greenery8
+CreateObject pos=254.62;333.46 dir=0.82 type=Greenery8
+CreateObject pos=143.85;331.15 dir=1 type=Greenery8
+CreateObject pos=33.85;332.69 dir=0.2 type=Greenery8
+CreateObject pos=117.69;265 dir=0.3 type=Greenery8
+CreateObject pos=105.38;307.31 dir=1.19 type=Greenery9
+CreateObject pos=86.15;348.85 dir=0 type=Greenery9
+CreateObject pos=211.54;327.31 dir=0.5 type=Greenery9
+CreateObject pos=216.15;262.69 dir=0.96 type=Greenery9
+CreateObject pos=216.15;225.77 dir=1.93 type=Greenery9
+CreateObject pos=263.85;299.62 dir=1.74 type=Greenery9
+CreateObject pos=231.54;302.69 dir=0.8 type=Greenery9
+CreateObject pos=188.46;276.54 dir=1.84 type=Greenery9
+CreateObject pos=174.62;282.69 dir=0.73 type=Greenery9
+CreateObject pos=110;188.85 dir=1.85 type=Greenery9
+CreateObject pos=131.54;231.92 dir=0.93 type=Greenery9
+CreateObject pos=3.08;156.54 dir=1.91 type=Greenery9
+CreateObject pos=-71.54;308.08 dir=0.92 type=Greenery9
+CreateObject pos=-93.08;335.77 dir=1.98 type=Greenery9
+CreateObject pos=-34.62;268.08 dir=0.03 type=Greenery9
+CreateObject pos=-203.08;135 dir=0.54 type=Greenery9
+CreateObject pos=-271.54;265.77 dir=1.86 type=Greenery9
+CreateObject pos=-380.77;27.31 dir=1.7 type=Greenery9
+
+
+
+CreateObject pos=-275.56;-332.22 dir=0.77 type=PracticeBot shield=0.5 power=0 proxyActivate=1 proxyDistance=20
+CreateObject pos=-190.77;141.92 dir=0.64 type=PracticeBot shield=0.2 power=0.1 proxyActivate=1 proxyDistance=20
+CreateObject pos=291;-111 dir=0.96 type=PracticeBot shield=0.3 power=0.1 proxyActivate=1 proxyDistance=20
+
+CreateObject pos=-6.67;-322.22 dir=0.77 type=TrackedOrgaShooter shield=0.7 power=11 proxyActivate=1 proxyDistance=20
+CreateObject pos=-10.8;-325.56 dir=0.89 type=WreckBotr2
+
+CreateObject pos=299.23;-110.38 dir=1.74 type=Mine
+CreateObject pos=303.08;-112.69 dir=0 type=Mine
+CreateObject pos=310;-123.46 dir=0 type=Mine
+CreateObject pos=300.77;-116.54 dir=0 type=Mine
+CreateObject pos=293.85;-116.54 dir=0 type=Mine
+CreateObject pos=293.08;-124.23 dir=0 type=Mine
+CreateObject pos=299.23;-130.38 dir=0 type=Mine
+CreateObject pos=303.85;-135.77 dir=0 type=Mine
+CreateObject pos=312.31;-135 dir=0 type=Mine
+CreateObject pos=307.69;-125.77 dir=1 type=Mine
+CreateObject pos=293.85;-128.08 dir=0 type=Mine
+CreateObject pos=289.23;-131.15 dir=0 type=Mine
+CreateObject pos=281.54;-141.15 dir=0.82 type=Mine
+CreateObject pos=284.62;-140.38 dir=0.02 type=Mine
+CreateObject pos=297.69;-141.15 dir=0 type=Mine
+CreateObject pos=270.77;-118.08 dir=0 type=Mine
+CreateObject pos=281.54;-110.38 dir=0 type=Mine
+CreateObject pos=283.85;-127.31 dir=0.5 type=Mine
+CreateObject pos=276.92;-128.85 dir=0 type=Mine
+CreateObject pos=271.54;-128.85 dir=0 type=Mine
+CreateObject pos=273.08;-121.92 dir=0 type=Mine
+CreateObject pos=292.31;-100.38 dir=0.5 type=Mine
+CreateObject pos=270;-102.69 dir=0 type=Mine
+CreateObject pos=290;-101.92 dir=0 type=Mine
+CreateObject pos=283.85;-95 dir=0 type=Mine
+CreateObject pos=283.85;-105.77 dir=0 type=Mine
+CreateObject pos=280;-111.15 dir=0 type=Mine
+CreateObject pos=268.46;-111.15 dir=0 type=Mine
+CreateObject pos=268.46;-114.23 dir=0 type=Mine
+CreateObject pos=268.46;-120.38 dir=0 type=Mine
+CreateObject pos=263.85;-130.38 dir=0 type=Mine
+CreateObject pos=274.62;-142.69 dir=0 type=Mine
+CreateObject pos=272.31;-142.69 dir=0 type=Mine
+CreateObject pos=309.23;-105.77 dir=0 type=Mine
+CreateObject pos=296.15;-97.31 dir=0 type=Mine
+CreateObject pos=299.23;-100.38 dir=0 type=Mine
+CreateObject pos=277.69;-90.38 dir=0 type=Mine
+CreateObject pos=266.92;-98.08 dir=0 type=Mine
+CreateObject pos=258.46;-101.92 dir=0 type=Mine
+CreateObject pos=255.38;-114.23 dir=0 type=Mine
+CreateObject pos=300;-85.77 dir=0 type=Mine
+CreateObject pos=280.77;-85 dir=0 type=Mine
+CreateObject pos=289.23;-89.62 dir=0 type=Mine
+CreateObject pos=307.69;-98.85 dir=0 type=Mine
+CreateObject pos=315.38;-98.85 dir=0 type=Mine
+CreateObject pos=330;-117.31 dir=0 type=Mine
+CreateObject pos=323.08;-121.15 dir=0 type=Mine
+CreateObject pos=315.38;-117.31 dir=0 type=Mine
+CreateObject pos=320.77;-110.38 dir=0.75 type=Mine
+CreateObject pos=309.23;-120.38 dir=0.97 type=Mine
+CreateObject pos=270.77;-86.54 dir=0.38 type=Mine
+CreateObject pos=280.77;-125 dir=1.76 type=Mine
+CreateObject pos=288.46;-107.31 dir=0.78 type=Mine
+CreateObject pos=284.62;-118.08 dir=0 type=Mine
+CreateObject pos=273.85;-119.62 dir=1.18 type=Mine
+CreateObject pos=272.31;-101.92 dir=1.9 type=Mine
+CreateObject pos=290;-79.62 dir=0.79 type=TNT
+CreateObject pos=253.08;-131.15 dir=1.87 type=Barrier1
+CreateObject pos=252.31;-107.31 dir=0 type=Barrier1
+
+
+CreateObject pos=336.92;23.46 dir=0.82 type=TitaniumOre
+CreateObject pos=337.69;22.69 dir=0 type=TitaniumOre
+CreateObject pos=346.15;21.15 dir=0 type=TitaniumOre
+CreateObject pos=333.85;21.15 dir=0 type=TitaniumOre
+CreateObject pos=333.08;15.77 dir=0.5 type=TitaniumOre
+CreateObject pos=345.38;14.23 dir=0.86 type=TitaniumOre
+CreateObject pos=328.46;21.15 dir=0.94 type=TitaniumOre
+CreateObject pos=-101.54;-121.92 dir=1.99 type=BlackBox
+CreateObject pos=-232.31;-83.46 dir=0.85 type=WreckBotw1
+CreateObject pos=-130.77;306.54 dir=0 type=WreckBotw1
+CreateObject pos=226.92;12.69 dir=0.89 type=Greenery8
+CreateObject pos=226.15;18.85 dir=0.16 type=Greenery8
+CreateObject pos=233.85;12.69 dir=0.85 type=Greenery8
+CreateObject pos=235.38;20.38 dir=0.5 type=Greenery9
+CreateObject pos=223.85;11.92 dir=1.11 type=Greenery9
+CreateObject pos=217.69;18.85 dir=0.05 type=Greenery9
+CreateObject pos=-102.31;43.46 dir=0.84 type=Greenery9
+CreateObject pos=-119.23;36.54 dir=1.96 type=Greenery9
+CreateObject pos=-100.77;49.62 dir=1 type=Greenery9
+CreateObject pos=-111.54;49.62 dir=0.5 type=Greenery9
+CreateObject pos=-109.23;44.23 dir=0 type=Greenery8
+CreateObject pos=-117.69;44.23 dir=0 type=Greenery8
+CreateObject pos=-106.92;34.23 dir=0.2 type=Greenery8
+CreateObject pos=280;201.15 dir=0.16 type=Greenery8
+CreateObject pos=283.08;201.15 dir=1.5 type=Greenery8
+CreateObject pos=289.23;198.85 dir=0 type=Greenery8
+CreateObject pos=280;193.46 dir=0 type=Greenery8
+CreateObject pos=288.46;188.85 dir=1.21 type=Greenery9
+CreateObject pos=274.62;198.08 dir=0.04 type=Greenery9
+CreateObject pos=288.46;200.38 dir=0.46 type=Greenery9
+CreateObject pos=287.69;192.69 dir=1 type=Greenery9
+CreateObject pos=-88.46;-269.62 dir=1.94 type=Greenery9
+CreateObject pos=-79.23;-267.31 dir=0.89 type=Greenery9
+CreateObject pos=-88.46;-272.69 dir=0 type=Greenery9
+CreateObject pos=-76.92;-272.69 dir=1 type=Greenery9
+CreateObject pos=-81.54;-275 dir=1.46 type=Greenery8
+CreateObject pos=-96.92;-267.31 dir=0.15 type=Greenery8
+CreateObject pos=-85.38;-262.69 dir=1.58 type=Greenery8
+CreateObject pos=-74.62;-288.08 dir=1.5 type=Greenery8
+
+
+CreateObject pos=-287.69;16.54 dir=0.04 type=Quartz3
+CreateObject pos=-287.9;19.5 dir=0.4 type=OrgaMatter
+
+
+CreateObject pos=185.38;-138.85 dir=1.14 type=Greenery9
+CreateObject pos=-284.44;-346.67 dir=1.28 type=RuinSupport
+CreateObject pos=-267;-345.56 dir=1.89 type=WreckBott2
+
+CreateObject pos=-176.67;-14 dir=1.95 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=188;-340 dir=0.98 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=-147.69;113.46 dir=1.91 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=-234.62;-28.85 dir=0.46 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=-374.62;-183.46 dir=1.86 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=-287.69;303.46 dir=0.52 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=370.77;-47.31 dir=1.17 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=108;32.31 dir=1.17 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+CreateObject pos=28;-182.31 dir=1.17 type=AlienWorm script1="%lvl%/WORM1.TXT" run=1
+
+CreateObject pos=260;-106.54 dir=0.71 type=Mine
+CreateObject pos=256.92;-91.92 dir=0.15 type=Mine
+CreateObject pos=292.31;-95 dir=1.82 type=Mine
+CreateObject pos=303.85;-96.54 dir=0.02 type=Mine
+CreateObject pos=312.31;-111.92 dir=1.62 type=Mine
+CreateObject pos=307.69;-85.77 dir=0.69 type=Mine
+CreateObject pos=293.85;-79.62 dir=1.67 type=Mine
+CreateObject pos=282.31;-74.23 dir=0.5 type=Mine
+CreateObject pos=275.38;-83.46 dir=1.01 type=Mine
+CreateObject pos=267.69;-80.38 dir=0 type=Mine
+CreateObject pos=262.31;-85.77 dir=0.91 type=Mine
+CreateObject pos=265.38;-106.54 dir=0.88 type=Mine
+CreateObject pos=261.54;-121.15 dir=1.95 type=Mine
+CreateObject pos=274.62;-72.69 dir=0.77 type=Mine
+CreateObject pos=291.54;-75 dir=1.95 type=Mine
+CreateObject pos=271.54;-64.23 dir=0.88 type=Mine
+CreateObject pos=266.92;-74.23 dir=0 type=Mine
+CreateObject pos=259.23;-74.23 dir=1 type=Mine
+CreateObject pos=253.85;-79.62 dir=0 type=Mine
+
+
+
+CreateObject pos=20;-94.23 dir=0 type=RuinRadar
+CreateObject pos=26.15;-97.69 dir=0.18 type=TitaniumOre
+CreateObject pos=25.38;-99.62 dir=0.99 type=TitaniumOre
+CreateObject pos=24.08;-101.08 dir=1.97 type=TitaniumOre
+CreateObject pos=24.28;-99.2 dir=1.27 type=TitaniumOre
+
+CreateObject pos=10.08;-135.08 dir=1.97 type=AlienAnt script1="%lvl%/ANT2.TXT" run=1
+
+CreateObject pos=35;-121 dir=0.21 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+//CreateObject pos=26;-121 dir=0.21 type=Me range=30
+
+CreateObject pos=-354.44;366.67 dir=1.98 type=AlienAnt script1="%lvl%/ANT2.TXT" run=1
+CreateObject pos=371.11;-373.33 dir=1.67 type=AlienAnt script1="%lvl%/ANT2.TXT" run=1
+CreateObject pos=-371.11;-27.78 dir=0.04 type=AlienAnt script1="%lvl%/ANT2.TXT" run=1
+CreateObject pos=-318.89;131.11 dir=0.06 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=-41.11;-343.33 dir=1.55 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=267.78;-341.11 dir=1.19 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=-43.33;222.22 dir=0.03 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=-345.56;17.78 dir=0.8 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=-208.89;374.44 dir=0.47 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=144.44;-371.11 dir=1.5 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=164;-311.11 dir=1.2 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=254;145.11 dir=1.7 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+CreateObject pos=94.3;334.11 dir=1.5 type=AlienWasp script1="%lvl%/WASP1.TXT" run=1
+
+CreateObject pos=340;-320 dir=1.2 type=AlienQueen  script1="%lvl%/QUEEN1.TXT" run=1
+
+//CreateObject pos=277.5;275 dir=1.5 type=TrackedShooter power=100 script1="%lvl%/BOT1.TXT" run=1 selectable=0
+
+//CreateObject pos=-150;120 dir=0.21 type=Me range=30
+CreateObject pos=-169.25;151.25 dir=1.5 type=TrackedShooter power=100 script1="%lvl%/BOT1.TXT" run=1 selectable=0
+CreateObject pos=-167.69;144.23 dir=1.1 type=WreckBott2
+
+
+CreateObject pos=330;20.38 dir=1.13 type=WheeledGrabber power=16 script1="%lvl%/BOT3.TXT" run=1 selectable=0
+
+
+
+CreateLight dir= 0.0;-1.0; 0.0 color= 0.63; 0.63; 0.63 type=Terrain
+CreateLight dir= 1.0; 0.0;-1.0 color=-0.70;-0.70;-0.70 type=Terrain
+CreateLight dir=-1.0; 0.0; 1.0 color= 1.40; 1.40; 1.40 type=Terrain
+CreateLight dir=-1.0;-1.0; 1.0 color= 0.56; 0.56; 0.56 type=Object
+CreateLight dir= 1.0;-1.0; 1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir=-1.0;-1.0;-1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir= 1.0;-1.0;-1.0 color= 0.16; 0.16; 0.16 type=Object
+
+WaterColor color=-0.1;-0.1;-0.1
+MapColor floor=255;145;0 water=40;40;40
+
+EnableBuild type=ResearchCenter
+EnableBuild type=AutoLab
+EnableBuild type=Derrick
+EnableBuild type=BotFactory
+EnableBuild type=PowerStation
+EnableBuild type=Converter
+EnableBuild type=RepairCenter
+EnableBuild type=DefenseTower
+//EnableBuild type=RadarStation
+EnableBuild type=ExchangePost
+EnableBuild type=PowerPlant
+EnableBuild type=NuclearPlant
+//EnableBuild type=PowerCaptor
+EnableBuild type=FlatGround
+EnableBuild type=Flag
+
+EnableResearch type=TRACKER
+EnableResearch type=THUMPER
+EnableResearch type=TOWER
+EnableResearch type=SHIELDER
+EnableResearch type=ATOMIC
+EnableResearch type=SNIFFER
+EnableResearch type=RECYCLER
+EnableResearch type=WINGER
+EnableResearch type=SHOOTER
+EnableResearch type=PHAZER
+
+
+EnableResearch type=iGUN
+EnableResearch type=iPAW
+
+DoneResearch type=TRACKER
+//DoneResearch type=THUMPER
+//DoneResearch type=TOWER
+DoneResearch type=WINGER
+DoneResearch type=ATOMIC
+DoneResearch type=SNIFFER
+DoneResearch type=SHOOTER
+
+
+
+EndMissionTake pos=0.00;0.00 dist=25000.00 type=Me lost=0
+EndMissionTake pos=0.00;0.00 dist=25000.00 type=PracticeBot lost=2
+EndMissionTake pos=317.5;295 dist=8 type=PracticeBot min=3
+
+
+Camera eye=0.00;5.00;0.00 lookat=0.00;1.00;0.00 delay=0
+

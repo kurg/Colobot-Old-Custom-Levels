@@ -1,0 +1,20 @@
+extern void object::INFORMATION_RGBv2( )
+{
+message("INFORMATION IS IN THE PROGRAM CODE");
+wait(0.5);
+/*
+DEVELOPMENT NOTES:
+
+RGB - ReinforcedGrabberBot model 2. DEVELOPED FOR TESTING PURPOSES ONLY.
+
+This little robot will surely revolutionize the colonization process.
+We had some problems regarding last prototype. The dimensional units during production were not correctly converted from imperial to metrical system, which resulted in durability even lower than regular grabbers.
+
+Fortunately, now we can guarantee, that massive damage threshold will help it to endure the vicious sandstorms, and hostile environment.
+As we have said, a few more tests and we'll be ready for mass production, and we won't have to give up the colonization process!
+We did not have the time to develop the software though, and the direct control drivers are not implemented. 
+
+Previous version (RGB - ReinforcedGrabberRobot model 1) should be deactivated, discarded and utilized immediately as soon as this robot arrives at base Bravo 7 for testing.
+
+*/
+}

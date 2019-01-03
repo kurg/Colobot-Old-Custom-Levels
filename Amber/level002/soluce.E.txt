@@ -1,0 +1,7 @@
+\b;Walkthrough
+Eliminate the ants first - use titanium ore to build some offensive robots. Ore is on the surface (east), there are no underground titanium ore deposits in this canyon.
+However use sniffer to check the area to the east - it is rich in underground uranium deposits. Get some uranium ore and nuclear cells (with atomic plant).
+There is one robot on the east side, and threee on the west side of the canyon. The robots, when approached, will divert their course like herded sheep, however they are afraid of flying bots and will wander randomly if airborne unit is nearby.
+Get them close to the ship and they will embark themselves. Use a wheeled or tracked bot to herd them. Beware of the mines! Once you gather all four practice bots you can take off. 
+\t;See also
+\l;Controls\u command;

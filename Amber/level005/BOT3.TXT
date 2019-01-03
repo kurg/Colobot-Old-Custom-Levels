@@ -1,0 +1,78 @@
+extern void object::Run( )
+{
+int list[], i;
+
+errmode(0); 
+while ( ismovie() != 0 )  wait(1);
+
+
+object target;
+
+i = 0;
+
+list[i++] = WingedShooter;
+list[i++] = TrackedShooter;
+list[i++] = WheeledShooter;
+list[i++] = LeggedShooter;
+list[i++] = PracticeBot;
+list[i++] = Me;
+list[i++] = WingedGrabber;
+list[i++] = TrackedGrabber;
+list[i++] = WheeledGrabber;
+list[i++] = LeggedGrabber;
+list[i++] = WingedShooter;
+list[i++] = TrackedShooter;
+list[i++] = WheeledShooter;
+list[i++] = LeggedShooter;
+list[i++] = WingedSniffer;
+list[i++] = TrackedSniffer;
+list[i++] = WheeledSniffer;
+list[i++] = LeggedSniffer;
+list[i++] = Thumper;
+list[i++] = PhazerShooter;
+list[i++] = Recycler;
+list[i++] = Shielder;
+list[i++] = Subber;
+list[i++] = Derrick;
+list[i++] = BotFactory;
+list[i++] = PowerStation;
+list[i++] = Converter;
+list[i++] = RepairCenter;
+list[i++] = DefenseTower;
+list[i++] = ResearchCenter;
+list[i++] = RadarStation;
+list[i++] = ExchangePost;
+list[i++] = PowerPlant;
+list[i++] = AutoLab;
+list[i++] = NuclearPlant;
+
+while(true)
+{
+wait(0.5);
+target = radar(list, 0, 360, 0, 15);
+if (target != null)
+{
+grab();
+while(true)
+{
+point X (-70,-80,0);
+if(rand()<0.5)
+{motor(1,0.9);}
+else
+{motor(0.9,1);}
+
+wait(0.5+2*rand());
+if(rand()<0.05)
+			{
+				turn(rand()*180-90);     
+				motor(1,1);        
+				wait(0.3+rand()*2);
+			} 
+if(rand()<0.3)
+			{
+turn (direction(X));
+			} 
+}
+}
+}
+}

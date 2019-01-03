@@ -1,0 +1,220 @@
+extern void object::Safety( )
+{
+
+errmode(0);
+
+int list[], i;
+i=0;
+list[i++] = WingedGrabber;
+list[i++] = WingedShooter;
+list[i++] = WingedOrgaShooter;
+list[i++] = WingedSniffer;
+list[i++] = Me;
+list[i++] = TrackedGrabber;
+list[i++] = WheeledGrabber;
+list[i++] = LeggedGrabber;
+list[i++] = TrackedShooter;
+list[i++] = WheeledShooter;
+list[i++] = LeggedShooter;
+list[i++] = TrackedOrgaShooter;
+list[i++] = WheeledOrgaShooter;
+list[i++] = LeggedOrgaShooter;
+list[i++] = TrackedSniffer;
+list[i++] = WheeledSniffer;
+list[i++] = LeggedSniffer;
+list[i++] = Thumper;
+list[i++] = PhazerShooter;
+list[i++] = Recycler;
+list[i++] = Shielder;
+list[i++] = Subber;
+list[i++] = AlienAnt;
+
+
+float ml=0;
+float mr=0;
+
+float a=0.20;
+
+object front;
+
+object left;
+
+object right;
+
+object rear;
+
+object ship;
+
+
+while(true)
+{
+ship=radar(SpaceShip,0,360,0,25);
+if(ship!=null)
+{
+goto(ship.position);
+while (true)
+{
+motor(0,0);
+wait(1);
+}
+
+}
+
+left=radar(list,75,150,0,15);
+right=radar(list,-75,150,0,15);
+rear=radar(list,180,60,0,15);
+if(left != null)
+{
+if(left.altitude > 0)
+{
+motor(rand()*2-1,rand()*2-1);
+wait(1+rand()*5);
+continue;
+}
+
+}
+
+if(right != null)
+{
+if(right.altitude > 0)
+{
+motor(rand()*2-1,rand()*2-1);
+wait(1+rand()*5);
+continue;
+}
+
+}
+
+if(rear!= null)
+{
+if(rear.altitude > 0)
+{
+motor(rand()*2-1,rand()*2-1);
+wait(1+rand()*5);
+continue;
+}
+
+}
+
+if(left==null and right==null and rear==null)
+{
+if(ml>0)
+{
+ml=ml-a;
+}
+else ml=ml+a;
+
+if(mr>0)
+{
+mr=mr-a;
+}
+else mr=mr+a;
+
+if(abs(ml)<2*a)
+{
+ml=0;
+}
+if(abs(mr)<2*a)
+{
+mr=0;
+}
+}
+else if(left!=null and right==null and rear==null)
+{
+ml=ml+a;
+mr=mr-1.5*a;
+}
+else if(left==null and right!=null and rear==null)
+{
+ml=ml-1.5*a;
+mr=mr+a;
+}
+else if(left==null and right==null and rear!=null)
+{
+if(ml==1 and mr==1)
+{
+wait(rand());
+}
+else if(ml<mr)
+{
+ml=ml+2*a;
+mr=mr+a;
+}
+else if(ml>mr)
+{
+ml=ml+a;
+mr=mr+2*a;
+}else if(mr==ml)
+{
+ml=ml+a;
+mr=mr+a;
+}
+
+}
+else if(left!=null and right!=null and rear==null)
+{
+if(ml==-1 and mr==-1)
+{
+wait(rand());
+}
+else if(ml<mr)
+{
+ml=ml-a;
+mr=mr-2*a;
+}
+else if(ml>mr)
+{
+ml=ml-2*a;
+mr=mr-a;
+}else if(mr==ml)
+{
+ml=ml-a;
+mr=mr-a;
+}
+
+}
+
+
+if(ml>1){
+ml=1;
+}
+if(mr>1){
+mr=1;
+}
+if(ml<-1){
+ml=-1;
+}
+if(mr<-1){
+mr=-1;
+}
+
+
+motor(ml,mr);
+wait(0.01);
+}
+
+
+
+
+
+
+
+
+if(ml>1){
+ml=1;
+}
+if(mr>1){
+mr=1;
+}
+if(ml<-1){
+ml=-1;
+}
+if(mr<-1){
+mr=-1;
+}
+
+
+motor(ml,mr);
+wait(0.01);
+}
+

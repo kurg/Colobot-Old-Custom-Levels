@@ -1,0 +1,23 @@
+\b;Objective
+Unfortunately, you did not manage to leave the atmosphere due to a storm. 
+If it were a mere sandstorm, things would be easier, as it tends to be devastating mostly near the surface and you would be able to escape. 
+However this was a raging storm with torrents of rain. You had to land, and now you are in the same spot as earlier. In fact so much water flooded the area, that several large water aquens have formed in the perimeter and there is no sign of lakes with boiling oil. It's also cooler and the air is clear after the rain, so you may take off your helmet now. 
+ 
+
+We have a minor issue though: after you landed, we stopped receiving readings from the black box as if it dissapeared from your cargo. 
+We know this sounds ridiculous, as you just brought it onboard - we speculate it may just have been damaged due to recent storm activity.
+We held an emergency conference with world's greatest physics and we assume that this explaination is plausible.
+In fact, mission control already assigned an international team of engineers and researchers to model the mathematical algorithm of electromagnetic phenomena that must have occured in order for black box to behave like it vanished.
+Do not worry though, your job is a lot simplier and straightforward.
+
+
+Of course we are aware that you just loaded the black box onboard, but you know the drill:
+
+Before you take off, we ask you, just to follow the procedure and simply confirm that the black box is on board of your ship 
+(I am also obliged by my supervisor here to remind you that of course you need to have black box on board in order to complete the mission).
+
+
+The storm has passed, the weather forecast now is optimistic, and you are free to launch as soon as you want (after confirming that the black box is onboard).
+
+\t;See also
+\l;Controls\u command;.

@@ -1,0 +1,122 @@
+extern void object::Attack( )
+{
+	int		listfirst[], j;
+	int		list[], i;
+	object	target;	
+	point		center;	
+	point		lastPos;	
+	float		distCent;	
+	float		r;	
+
+	errmode(0); 
+	while ( ismovie() != 0 )  wait(1);
+
+
+	j = 0;
+	listfirst[j++] = NuclearCell;
+	listfirst[j++] = Titanium;
+
+
+	i = 0;
+
+	list[i++] = WingedShooter;
+	list[i++] = TrackedShooter;
+	list[i++] = WheeledShooter;
+	list[i++] = LeggedShooter;
+	list[i++] = WingedOrgaShooter;
+	list[i++] = TrackedOrgaShooter;
+	list[i++] = WheeledOrgaShooter;
+	list[i++] = LeggedOrgaShooter;
+	list[i++] = PhazerShooter;
+	
+
+
+
+	center = position;
+		
+				
+	distCent = 20; 	
+
+	lastPos = position;	
+	motor(1,1);			
+	while ( true )		
+	{
+
+		target = radar(listfirst, 0, 360, 0, 45);
+		if (target == null)
+		target = radar(list, 0, 360, 0, 45);
+		if (target == null or topo(position)<0)
+		{        
+			if(rand()>0.3){motor(0,0);wait(1)+rand()*3;}                              
+			if (distance2d(position, center) > distCent or topo(position)<0)
+			{   
+				motor(0, 0);
+				wait(0.5+rand());  
+				motor (-rand(), -rand());
+				wait (1.5+rand()*2);
+				turn(direction(center));
+				motor (1, 1);
+				do 
+				{
+					lastPos = position;
+					wait(0.5+rand()*2); 
+					if (distance2d(lastPos, position) < 0.2)
+					{  
+						turn(rand()*360-180);
+						motor(1,1);
+						wait(1);
+						turn(direction(center));
+					}
+				}
+				while (distance2d(position, center) > distCent or topo(position)<0);
+			}
+			else
+			{  
+				if (distance2d(lastPos, position) < 0.2)
+				{ 
+					turn(rand()*360-180);
+					motor(1,1);
+					wait(rand()*3);
+				}
+				r = rand();
+				if (r > 0.6)
+				{ 
+					motor (1, 0.7);
+					wait(rand()*3);
+					motor (1, 1); 
+				}
+				if (r < 0.4)
+				{  
+					motor (0.7, 1);
+					wait(rand()*3);
+					motor (1, 1);  
+				}
+				
+				wait(1);     
+				if (rand() < 0.1)
+				{  
+					motor (0, 0);
+					wait(rand()*3);
+					motor (1, 1);  
+				}   
+				lastPos = position;
+			}
+		}
+		else
+		{   
+			turn(direction(target.position));
+			if(distance2d(position, target.position)<30)
+			{
+			fire(target.position);
+			}
+			motor(1,1);            
+			wait(1);
+			if(rand()<0.1)
+			{
+				turn(rand()*180-90);
+				motor(1,1);            
+				wait(0.3+rand()*2);
+			}            
+		}
+	}
+}
