@@ -1,0 +1,45 @@
+\b;Satellite Report
+Updated scans available.  Full life-form scans not yet completed.
+\c;
+\s;-> SURFACE\c;
+\tab;Temperature:      12.3C
+\tab;Atmosphere:       Nitrogen/Oxygen/Argon; 87% earth-normal
+\tab;Wind:             2.0 mps
+\tab;Titanium ore:     None
+\tab;Uranium ore:      None
+
+\s;-> SUBSOIL\c;
+\tab;Energy:           Very little
+\tab;                     This late into the evening, only one
+\tab;                     of your solar collectors is still
+\tab;                     functioning.
+\tab;
+\tab;Titanium ore:     Some
+\tab;                     Two separate titanium ore sites have
+\tab;                     been discovered; both are marked by
+\tab;                     rocky patches on the ground above.
+\tab;
+\tab;Uranium ore:      Some
+\tab;                     The swampy area at the head-waters
+\tab;                     of the river in the north-west shows
+\tab;                     some indications of localized
+\tab;                     uranium deposits.
+
+\s;-> ADDITIONAL INFORMATION\c;
+\tab;Detected:         Autonomous activity
+\tab;  - Danger:       Unknown
+\tab;                     Low-level activity is detected
+\tab;                     throughout the contintent.  No
+\tab;                     specific direction of motion has
+\tab;                     been isolated.  Yet.
+\tab;
+\tab;Detected:         Underwater motion
+\tab;  - Danger:       Elevated
+\tab;                     Motion has been detected underwater.
+\tab;                     It is possible that the native life-
+\tab;                     forms are capable of travelling
+\tab;                     unharmed underwater.  Attack may
+\tab;                     therefore come from any direction.
+
+\n;
+

@@ -1,0 +1,114 @@
+extern void object::ChargeTowers()
+{
+	point safepos = position;
+	
+	while (true)
+	{
+		// Ensure the grabber is always holding a power cell
+		
+		if (load == null)
+		{
+			object bb;
+			if ((bb = radar (PowerCell, 0, 360, 0, 300)) == null) {
+				message ("Unable to find a battery nearby");
+				return;
+			}
+			goto (bb.position);
+			grab();
+		}
+		
+		// Make sure the bot's battery is sufficient, and
+		// the battery we're carrying is fully charged.
+		
+		while ( (energyCell.energyLevel < 0.4) ||
+		        (load.energyLevel < 1))
+		{
+			object ps;
+			if ((ps = radar (PowerStation)) == null)
+			{
+				message ("No power station available!");
+				return;
+			}
+			goto (ps.position);
+			wait (5);
+		}
+		
+		// If this bot is in poor health, fix it
+		
+		if (shieldLevel < 0.4)
+		{
+			object rc;
+			if ((rc = radar (RepairCenter)) != null)
+			{
+				goto (rc.position);
+				while (shieldLevel < 1)
+				   wait (1);
+			}
+		}
+		
+		// Find the tower with the lowest energy
+		
+		object lowest = null;
+		float has = 0.35;
+		float min = 0;
+		float max = 400;
+		
+		object tt;
+		while ((tt=radar(DefenseTower,0,360,min,max)) !=null)
+		{
+			if ( (tt.energyCell == null) ||
+			     (tt.energyCell.energyLevel < has) )
+			{
+				lowest = tt;
+				if (tt.energyCell == null)
+				   has = 0;
+				else
+				   has = tt.energyLevel;
+			}
+			min = distance (position, tt.position) + 0.02;
+			if (has == 0)
+			    break;
+		}
+		
+		// If we found a tower with a low battery, swap
+		
+		if (lowest != null)
+		{
+			goto (lowest.position);
+			
+			// We're going to try to drop the new battery
+			// directly into the tower.  If there's a battery
+			// there already, just fail the drop() call
+			// instead of killing the whole program.
+			errmode (0);
+			
+			if (drop (InFront) != 0)
+			{
+				// need to swap out the old cell first!
+				turn (90);
+				drop (InFront);
+				turn (-90);
+				
+				grab (InFront);
+				drop (Behind);
+				
+				turn (90);
+				grab (InFront);
+				turn (-90);
+				
+				drop (InFront);
+				grab (Behind);
+			}
+			
+			// Resume normal error checking
+			errmode (1);
+		}
+		else
+		{
+			// Nothing to do; sit somewhere safe
+			
+			if (distance (position, safepos) > 20)
+			    goto (safepos);
+		}
+	}
+}

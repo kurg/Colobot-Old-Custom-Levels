@@ -1,0 +1,9 @@
+\b;Programs dispatched by Mission Control
+Mission Control has one additional program that may help you in this mission.
+
+Initially your power requirements will be very high.  You can use the new FillCells program to keep all your batteries topped up.
+
+Once you have built a Power Station, leave a bot running the FillCells program.  It will automatically look around for the least-charged battery, carry it up to the power station and return it to its original position when replenished.
+
+This technique will allow your other bots to simply pick up any fresh battery and resume work, knowing that new fresh batteries will always be available.
+

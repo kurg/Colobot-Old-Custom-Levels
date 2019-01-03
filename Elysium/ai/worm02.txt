@@ -1,0 +1,94 @@
+extern void object::WormDriver()
+{
+   // Go underground!
+
+   for (int tt = abstime(); abstime() < tt+8; )
+      motor (1, 1);
+   motor (0, 0);
+
+   // Okay, now we're safely hidden.
+   // Give the poor player a few minutes to get started;
+   // false sense of security and all that.  Those towers
+   // are going to be completely useless.  :)
+
+   wait (120);
+
+   // Now wake up every N seconds and produce ants.
+
+   bool creating = false;
+
+   while (true)
+   {
+      int count = CountAnts();
+
+      if (count < 10)
+      {
+         if (!creating)
+            message ("Satellite: increased activity detected");
+         creating = true;
+      }
+      else if (count >= 15)
+      {
+         if (creating)
+            message ("Satellite: activity level has peaked");
+         creating = false;
+      }
+
+      if (creating)
+      {
+         SpawnAnt();
+      }
+
+      wait (15);
+   }
+}
+
+int object::CountAnts()
+{
+   int cc = 0;
+   float min = 0;
+   float max = 1000;
+
+   int ants[];
+   ants[0] = AlienAnt;
+   ants[1] = AlienEgg;
+
+   object item;
+   while ((item = radar (ants, 0, 360, min, max)) != null)
+   {
+      ++cc;
+      min = distance (position, item.position) + 0.01;
+   }
+
+   return cc;
+}
+
+void object::SpawnAnt()
+{
+   // Pick a side of the map to spawn near
+
+   int side = rand() * 4;  // 0=left, 1=top, 2=right, 3=bottom
+
+   // Pick a location
+
+   int d1 = rand() * 550 - 275;  // -275..275
+   int d2 = rand() *  50 + 125;  //  125..175
+
+   // Turn that into a position
+
+   point pos;
+   if (side == 0)
+      { pos.y = d1; pos.x = -400 + d2; }
+   else if (side == 1)
+      { pos.x = d1; pos.y = 400 - d2; }
+   else if (side == 2)
+      { pos.y = d1; pos.x = 400 - d2; }
+   else
+      { pos.x = d1; pos.y = -400 + d2; }
+   pos.z = topo(pos);
+
+   // Produce an ant here
+
+   produce (pos, 0, AlienAnt, "%chap%/ai/ant02.txt");
+}
+

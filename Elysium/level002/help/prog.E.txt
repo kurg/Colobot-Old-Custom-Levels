@@ -1,0 +1,13 @@
+\b;Programs dispatched by Mission Control
+Anticipating an eventful night, Mission Control has developed three defensive programs for your use.
+
+\s;Program #1: ChargeTowers
+A single bot running the ChargeTowers program will monitor all your defense towers and ensure that no tower's cell ever runs too low on energy.  The bot will automatically recharge batteries, will repair or recharge itself when necessary, and will service the most degraded towers first.  Moreover, the bot will swap in a new battery as quickly as possible, leaving the tower very little down-time.
+
+\s;Program #2: ActiveSentry
+Place a shooter near a good defensive position and start it running the ActiveSentry program.  The shooter will monitor the vicinity for encroachment, and actively attack any incoming ants before they can bring their superior range to bear.  Again, the bots will automatically service themselves when necessary and will return to their posts when ready to resume duties.
+
+\s;Program #3: PhazerSentry
+This program, obtained by Mission Control from a third party, is instant death to any enemies that approach.  The Phazer Shooter boasts range superior to all other bots, and apparently even has a longer range than the native life forms.  But you will have to keep the phazers supplied with energy, and they are still vulnerable to attack by multiple enemies simultaneously.
+
+Beware: these systems alone will be inadequate to completely ensure your safety throughout the night.  The inhabitants of the planet will soon study the defenses, defeat them, and invade your encampment.  Your safety will require more robust defenses.

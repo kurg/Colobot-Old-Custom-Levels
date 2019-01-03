@@ -1,0 +1,286 @@
+// set ts=4 sts=4 noet sw=4 sr
+extern void object::TeamAttack()
+{
+	errmode (0);
+
+	int team[];
+	team[0] = AlienAnt;
+
+	int foes[];
+	int ii = 0;
+	foes[ii++]=WheeledGrabber;      foes[ii++]=TrackedGrabber;      foes[ii++]=WingedGrabber;      foes[ii++]=LeggedGrabber;
+	foes[ii++]=WheeledShooter;      foes[ii++]=TrackedShooter;      foes[ii++]=WingedShooter;      foes[ii++]=LeggedShooter;
+	foes[ii++]=WheeledSniffer;      foes[ii++]=TrackedSniffer;      foes[ii++]=WingedSniffer;      foes[ii++]=LeggedSniffer;
+	foes[ii++]=WheeledOrgaShooter;  foes[ii++]=TrackedOrgaShooter;  foes[ii++]=WingedOrgaShooter;  foes[ii++]=LeggedOrgaShooter;
+	foes[ii++]=Thumper;             foes[ii++]=PhazerShooter;       foes[ii++]=Recycler;           foes[ii++]=Shielder;
+	foes[ii++]=Subber;              foes[ii++]=Me;
+
+	foes[ii++]=Derrick;      foes[ii++]=BotFactory;    foes[ii++]=PowerStation;   foes[ii++]=Converter;
+	foes[ii++]=RepairCenter; foes[ii++]=DefenseTower;  foes[ii++]=ResearchCenter; foes[ii++]=RadarStation;
+	foes[ii++]=ExchangePost; foes[ii++]=PowerPlant;    foes[ii++]=AutoLab;        foes[ii++]=NuclearPlant;
+
+	int shooters[];
+	ii = 0;
+	shooters[ii++]=WheeledShooter;      shooters[ii++]=TrackedShooter;      shooters[ii++]=WingedShooter;      shooters[ii++]=LeggedShooter;
+	shooters[ii++]=WheeledOrgaShooter;  shooters[ii++]=TrackedOrgaShooter;  shooters[ii++]=WingedOrgaShooter;  shooters[ii++]=LeggedOrgaShooter;
+	shooters[ii++]=PhazerShooter;
+	shooters[ii++]=Me;
+
+	point ptLast = position;
+	float tLast = 0;
+	float dFromTarget = 3;
+
+	while (true)
+	{
+		// Pick a nearby target
+
+		object tgt;
+		if ((tgt = radar (foes)) == null) {
+			motor (0, 0);
+			continue;
+		}
+
+		point tgtpos = tgt.position;
+		int tgtcat = tgt.category;
+
+		// Find out how close we can get.  If there's a
+		// phazer shooter nearby, we get a little timid.
+
+		float distBlack = 100;   // use goto() beyond here
+		float distGreen = 55;    // charge if team this close
+		float distYellow = 48;   // try to get this close
+		float distOrange = 52;   // shoot when waiting this far
+		float distRed = 40;      // pound when this far
+
+		object fs;
+		if ((fs = radar (PhazerShooter)) != null) {
+			if (distance (position, fs.position) < 100) {
+				distGreen += 20;
+				distYellow += 15;
+			}
+		}
+
+		// Get close, but not too close
+
+		point flat = tgtpos;
+		flat.z = position.z;
+
+		point ptTarget = scalefrom (tgtpos, distYellow);
+
+		float dtNow = distance (position, flat);
+		float dwNow = distance (position, ptTarget);
+
+		bool charge = teamIsReady (team, tgtcat, tgtpos, distGreen);
+		if (charge && (dtNow > distGreen))
+		    charge = false;
+
+		if (charge)
+		{
+			turn (direction (tgtpos));
+
+			int shootnext = 0;
+			while (tgt.shieldLevel > 0)
+			{
+				tgtpos = tgt.position;
+
+				dtNow = distance (position, tgtpos);
+				if (dtNow > distGreen)
+				    break;
+				if (dtNow < distRed)
+				{
+					if (dtNow != 0)
+					{
+						float dzNow = tgtpos.z - position.z;
+						aim (atan (dzNow/dtNow)-pitch);
+					}
+					if (abs (direction (tgtpos)) < 5)
+					{
+						if (abstime() > shootnext)
+						{
+							fire (tgtpos);
+							shootnext = abstime() + 2;
+						}
+					}
+					else
+					{
+						shootnext = 0;
+					}
+				}
+				else
+				{
+					shootnext = 0;
+				}
+
+				if (dtNow > 10)
+				    motorat (tgtpos);
+				else if (dtNow < 5)
+				    motor (-1, -1);
+				else
+				    turn (direction (tgtpos));
+			}
+		}
+        else
+		{
+			// If something wanders into my field of vision, kill it
+
+			object op;
+			while ((op = radar (shooters, 0, 360, 0, distOrange)) != null)
+			{
+				point ff = op.position;
+				ff.z = position.z;
+				float dt = distance (position, ff);
+				float dz = op.position.z - position.z;
+				turn (direction (op.position));
+				if (dt > 0)
+					aim (atan (dz/dt)-pitch);
+				fire (op.position);
+			}
+
+			// Otherwise, proceed on mission.
+
+			if (dtNow > distBlack)
+			{
+				point near = scalefrom (tgtpos, distBlack-5);
+				if (goto (scaleto (near, 10), 0, 1) != 0)
+				{
+					motorat (ptTarget);
+				}
+			}
+			else if (dwNow > dFromTarget)
+			{
+				motorat (ptTarget);
+				dFromTarget = 3;
+
+				// Stuck detection.  If we don't
+				// make progress in 3 seconds, we're stuck.
+
+				if (tLast == 0)
+				{
+					tLast = abstime();
+					ptLast = position;
+				}
+				else if (abstime() >= tLast + 3)
+				{
+					if (distance (position, ptLast) < 1)
+					{
+						if (dwNow < 10)
+						{
+							goto (ptTarget, 0, 1);
+						}
+						else
+						{
+							point near = scaleto (tgtpos, 10);
+							goto (near, 0, 1);
+						}
+						tLast = 0;
+					}
+					else
+					{
+						tLast = abstime();
+						ptLast = position;
+					}
+				}
+
+				// If we're about to hit another bot, veer left for a while
+
+				if (radar (team, 0, 30, 0, 10) != null)
+			    {
+					while (radar (team, 0, 100, 0, 15) != null)
+						motor (-1, 1);
+					while (radar (team, -80, 100, 0, 15) != null)
+					    motor (1, 1);
+			    }
+			}
+			else
+			{
+				motor (0, 0);
+				tLast = 0;
+				dFromTarget = 5;
+				turn (direction (tgtpos));
+			}
+		}
+	}
+}
+
+boolean object::teamIsReady (int[] team, int tgtcat, point tgtpos, float distGreen)
+{
+	int required = 3;
+	int have = 1;  // me!
+
+	if (tgtcat == PhazerShooter)
+		required++;
+
+	float min = 0;
+	float max = 1000;
+
+	object buddy;
+	while ((buddy = radar (team, 0, 360, min, max)) != null)
+	{
+		if (distance(tgtpos, buddy.position) < distGreen)
+		   ++have;
+		min = distance (position, buddy.position) + 0.02;
+	}
+
+	return (have >= required);
+}
+
+point object::scalefrom (point tgt, float offset)
+{
+	float dist = distance (position, tgt);
+
+	if (dist == 0)
+	    dist = 0.1;
+
+	point go;
+	go.x = tgt.x + offset * (position.x - tgt.x) / dist;
+	go.y = tgt.y + offset * (position.y - tgt.y) / dist;
+	go.z = topo(go);
+
+	return go;
+}
+
+point object::scaleto (point tgt, float offset)
+{
+	float dist = distance (position, tgt);
+
+	if (dist == 0)
+	    dist = 0.1;
+
+	point go;
+	go.x = position.x + offset * (tgt.x - position.x) / dist;
+	go.y = position.y + offset * (tgt.y - position.y) / dist;
+	go.z = topo(go);
+
+	return go;
+}
+
+
+void object::motorat (point tgt)
+{
+	float dist = distance (position, tgt);
+	float ang = direction (tgt);
+	point next = scaleto (tgt, 2);
+
+	float scale = 1;
+	if (abs(ang) < 90)
+	{
+		if (dist < 3)
+		    scale = 0.1;
+		else if (dist < 5)
+		    scale = 0.4;
+		else if (dist < 10)
+		    scale = 0.7;
+	}
+
+	if (ang > 10)
+	    motor (-1, 1);
+	else if (ang < -10)
+	    motor (1, -1);
+	else if (ang > 1)
+	    motor (scale*3/4, scale);
+	else if (ang < -1)
+	    motor (scale, scale*3/4);
+	else
+	    motor (scale, scale);
+}
+

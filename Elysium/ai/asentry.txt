@@ -1,0 +1,363 @@
+extern void object::ActiveSentry()
+{
+	float range = 200;
+	point base = position;
+	
+	int foes[];
+	foes[0] = AlienAnt;
+	foes[1] = AlienWasp;
+	foes[2] = AlienWorm;
+	foes[3] = AlienSpider;
+	foes[4] = AlienEgg;
+	
+	errmode (0);
+	
+	for (;;) {
+		
+		// Make sure we're ready to work
+		
+		while (hotEngine()) {
+			gotoSafe (base, foes);
+		}
+		while (inDanger()) {
+			if (!fixup (foes))
+			    break;
+		}
+		
+		// Go find a baddy
+		
+		object tgt = findFoe (base, foes, range);
+		if (tgt == null) {
+			gotoBase (base, foes);
+		} else {
+			attack (base, tgt);
+		}
+	}
+}
+
+void object::fixAltitude ()
+{
+	point tgt = position;
+	tgt.z = 0;
+	matchAltitude (tgt);
+}
+
+point object::nextstep (float dist)
+{
+	point pos = position;
+	pos.x += dist * cos(orientation);
+	pos.y += dist * sin(orientation);
+	return pos;
+}
+
+void object::matchAltitude (point tgt)
+{
+	if ((category == WingedSniffer) || (category == WingedGrabber) || (category == WingedShooter) || (category == WingedOrgaShooter))
+	{
+		float tgtz = tgt.z;
+		if (tgtz < 3)
+		    tgtz = 3;
+		
+		float next = topo(position) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		next = topo(nextstep(1)) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		next = topo(nextstep(5)) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		next = topo(nextstep(10)) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		next = topo(nextstep(20)) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		next = topo(nextstep(30)) + 2;
+		if (tgtz < next)
+		    tgtz = next;
+		
+		for (int ii = 0; ii < 30 && position.z < tgtz-2; ++ii)
+		    jet(1);
+		for (int ii = 0; ii < 30 && position.z > tgtz+2; ++ii)
+		    jet(-1);
+		if (position.z < tgtz-1)
+		    jet(1);
+		else if (position.z > tgtz+1)
+		    jet(-1);
+		else if (position.z < tgtz-0.5)
+		    jet(0.5);
+		else if (position.z > tgtz+0.5)
+		    jet(-0.5);
+		else
+		    jet (0);
+	}
+}
+
+bool object::hotEngine ()
+{
+	return (temperature > 0.7);
+}
+
+bool object::atBase (point base)
+{
+	return (distance (position, base) < 25);
+}
+
+bool object::inDanger ()
+{
+	return (energyCell.energyLevel < 0.3 || shieldLevel < 0.4);
+}
+
+bool object::isSafe (int[] foes, point pos)
+{
+	if (topo(pos) < 0) {
+		return false;
+	} else if (topo(pos) < 2) {
+		if (flatground (pos, 2) < 2)
+		    return false;
+	}
+	
+	float min = 0;
+	float max = 10000;
+	
+	object tgt;
+	while ((tgt = radar (foes, 0, 360, min, max)) != null) {
+		if (distance (pos, tgt.position) < 80)
+		    return false;
+		min = distance (position, tgt.position) + 0.01;
+	}
+	
+	return true;
+}
+
+point object::findSafe (point base, int[] foes)
+{
+	point safe = base;
+	
+	for (float dist = 5; dist < 200; dist += 5) {
+		for (float ang = 0; ang < 360; ang += 30) {
+			point pos = position;
+			pos.x += dist * cos(ang);
+			pos.y += dist * sin(ang);
+			if (isSafe (foes, pos))
+			    return pos;
+		}
+	}
+	
+	return safe;
+}
+
+object object::findFoe (point base, int[] foes, float dmax)
+{
+	object hot = null;
+	float min = 0;
+	float max = 1000;
+	
+	object found;
+	while ((found = radar (foes, 0, 360, min, max)) != null)
+	{
+		float dbase = distance (found.position, base);
+		float dme = distance (found.position, position);
+		min = distance(position,found.position)+0.01;
+		
+		// Ignore foes that are more than a certain distance from base,
+		// and foes that are underwater
+		
+		if (dbase >= dmax || found.position.z <= 0)
+		    continue;
+		
+		// If we're flying on *top* of a foe, don't just circle forever.
+		// Instead, ignore it until we're far enough away to turn around.
+		
+		if (found.position.z + 1 < position.z)
+		{
+			if (dme < 10)
+			{
+				if (abs(direction(found.position)-orientation) > 90)
+				    continue;
+			}
+		}
+		
+		// If we found a valid target, we prefer whichever one is
+		// closest to us right now.
+		
+		if ((hot == null) || (dme < distance (hot.position, position)))
+		    hot = found;
+	}
+	
+	return hot;
+}
+
+void object::motorAt (point pos)
+{
+	float ang = direction (pos);
+	if (abs(ang) < 10)
+	    motor (1, 1);
+	else if (ang > 0)
+	    motor (0, 1);
+	else
+	    motor (1, 0);
+}
+
+void object::gotoBase (point base, int[] foes)
+{
+	if (!atBase (base))
+	{
+		fixAltitude();
+		
+		if (hotEngine() || !opportunity (foes))
+		{
+			motorAt (base);
+		}
+		else
+		{
+			motor (0, 0);
+			
+			while (altitude > 0) {
+				jet (-1);
+				sentry (foes, true);
+			}
+			
+			motor (0, 0);
+			jet (0);
+		}
+	}
+}
+
+void object::gotoSafe (point base, int[] foes)
+{
+	if (!isSafe (foes, position))
+	{
+		point tgt = findSafe (base, foes);
+		fixAltitude();
+		motorAt (tgt);
+	}
+	else
+	{
+		motor (0, 0);
+		
+		while (isSafe (foes, position) && !inDanger() && (altitude > 0)) {
+			jet(-1);
+			sentry (foes, true);
+		}
+		
+		motor (0, 0);
+		jet (0);
+		
+		while (isSafe (foes, position) && !inDanger() && (temperature > 0.1)) {
+			sentry (foes, true);
+		}
+	}
+}
+
+bool object::opportunity (int[] foes)
+{
+	object tgt;
+	if ((tgt = radar (foes, 0, 180, 0, 60)) != null)
+	    return shoot (tgt.position, false);
+	else
+	    return false;
+}
+
+bool object::sentry (int[] foes, bool still)
+{
+	object tgt;
+	if ((tgt = radar (foes, 0, 360, 0, 50)) != null)
+	    return shoot (tgt.position, still);
+	else
+	    return false;
+}
+
+bool object::shoot (point tgt, bool still)
+{
+	float dd = distance2d (position, tgt) + 0.0001;
+	float dz = tgt.z - position.z;
+	float angz = atan (dz / dd) - pitch;
+	if ((angz < -20) || (angz > 20))
+	{
+		return false;
+	}
+	else
+	{
+		aim (angz);
+		
+		float ang = direction (tgt);
+		
+		if (abs(ang) < 10)
+		{
+			turn (ang);
+			if (dd < 45)
+			    fire (0.1);
+			if (!still)
+			    motor (1, 1);
+		}
+		else if (still)
+		{
+			if (ang > 0)
+			    motor (-1, 1);
+			else
+			    motor (1, -1);
+		}
+		else
+		{
+			if (ang > 0)
+			    motor (0, 1);
+			else
+			    motor (1, 0);
+		}
+		
+		return true;
+	}
+}
+
+void object::safego (point pos)
+{
+	while (goto (pos) != 0) {
+		if (distance (position, pos) > 20) {
+			message ("target blocked; getting close");
+			goto (space (pos, 0, 20, 3), 0, 1);
+		}
+	}
+}
+
+bool object::fixup (int[] foes)
+{
+	bool went = false;
+	
+	if (shieldLevel != 1) {
+		object tgt;
+		if ((tgt = radar (RepairCenter)) != null) {
+			went = true;
+			safego (tgt.position);
+			while (shieldLevel < 1)
+			wait (1);
+		}
+	}
+	
+	if (energyCell.category != NuclearCell) {
+		object tgt;
+		if ((tgt = radar (PowerStation)) != null) {
+			went = true;
+			safego (tgt.position);
+			while (energyCell.energyLevel < 1)
+			    wait (1);
+		}
+	}
+	
+	return went;
+}
+
+void object::attack (point base, object foe)
+{
+	point tgt = foe.position;
+	matchAltitude (tgt);
+	shoot (tgt, false);
+}
+
+

@@ -1,0 +1,43 @@
+\b;Satellite Report
+Initial scans available; scanning for uranium ore and alien life-forms continues.
+\c;
+\s;-> SURFACE\c;
+\tab;Temperature:      22.8C
+\tab;Atmosphere:       Nitrogen/Oxygen/Argon; 87% earth-normal
+\tab;Wind:             0.0 mps
+\tab;Titanium ore:     None
+\tab;Uranium ore:      None
+
+\s;-> SUBSOIL\c;
+\tab;Energy:           Some
+\tab;                     Solar energy collectors should
+\tab;                     work at high altitudes.
+\tab;
+\tab;Titanium ore:     Some
+\tab;                     As usual, look for small rocky
+\tab;                     patches, indicating durable ore
+\tab;                     exists beneath the surface.  One
+\tab;                     such area is detected east of your
+\tab;                     landing site, near the coast.
+\tab;
+\tab;Uranium ore:      Unknown
+
+\s;-> ADDITIONAL INFORMATION\c;
+\tab;Detected:         Autonomous activity
+\tab;  - Danger:       Not immediate
+\tab;                     Activity appears limited to the
+\tab;                     region north of the river.  Be on
+\tab;                     your guard.  There is something...
+\tab;                     disturbing in the activity being
+\tab;                     observed.  The native life forms
+\tab;                     may prove less tractable than
+\tab;                     others you have encountered.
+\tab;
+\tab;Detected:         Flight-hampering mist
+\tab;  - Danger:       Inconvenience only
+\tab;                     Mist appears non-corrosive, but has
+\tab;                     electromagnetic properties that are
+\tab;                     affecting your flight gear.  You'll
+\tab;                     be grounded until the mist settles.
+\n;
+

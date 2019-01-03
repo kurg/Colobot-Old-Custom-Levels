@@ -1,0 +1,13 @@
+\b;Walkthrough
+You can deploy power stations and energy cell factories anywhere the ground is high enough to be covered with snow; your solar collectors should do the rest.  The only hard part will be finding flat areas in which to build.
+
+Titanium should also be easy to find.  Search for small outcroppings of sharp rocky areas, such as the one east of your spaceship near the coast.  These rocky patches are caused by durable ore such as titanium under the surface.  The satellite report shows another such outcropping north of the river, if you can make it that far.
+
+Clearly you will need to use a subber to cross the river, since your bots cannot fly there.  It is up to you to find a way to get past the guard.
+
+When you are ready, send a subber across with a titanium cube.  Follow it yourself, and build a derrick on a likely spot in order to extract titanium ore.  Send another subber across for a second titanium cube, and build a converter near the derrick.  Remember that there is power available at all high altitudes.
+
+Once established on the northern side of the river, you should be able to destroy the native life forms and build your radar station to complete the mission.
+
+\t;See also
+\l;Controls\u command;

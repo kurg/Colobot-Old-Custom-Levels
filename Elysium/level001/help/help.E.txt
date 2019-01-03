@@ -1,0 +1,13 @@
+\b;From Mission Control
+Welcome to planet Elysium!  Mission Control is very excited about this location, as the area looks ripe for colonization.  Your mission is to scout the planet and set up a radar station to report your findings.
+
+Your spaceship has set down on the southern edge of the major continent, which is unfortunate as it will hamper your scouting efforts.  There is a large body of water just north of you, and you'll have to cross it before you can look around the rest of the continent.
+
+Ordinarily we would suggest you simply fly across the water; unfortunately, there appears to be some strange yellow mist settling over the planet that is interfering with your flying apparatus.  You and your bots will be unable to fly until the mist settles.
+
+Find a way to build your radar station north of the river, near the middle of the continent.  And be on your guard: satellites detect some kind of motion up there--possibly natives guarding the river bank.  We know you'll find a way to outsmart them.  If they prove dangerous, they must be destroyed to ensure the safety of yourself and your facilities.
+
+\key;\key help;\norm; allows you to review these instructions at all times on your personal SatCom \button 63;.
+
+\t;See also
+\l;Controls\u command; and \l;CBOT Language\u cbot;

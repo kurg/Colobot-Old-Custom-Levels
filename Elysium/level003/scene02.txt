@@ -1,0 +1,186 @@
+Title.F      text="?"
+Resume.F     text="?"
+Title.E      text="Elysium Nights"
+Resume.E     text="Can you survive nightfall in paradise?"
+Instructions name="%user%\mhelp02.txt"
+Satellite    name="%user%\minfo02.txt"
+Loading      name="%user%\mload02.txt"
+SoluceFile   name="%user%\msolu02.txt"
+HelpFile     name="cbot.txt"
+EndingFile   win=-1 lost=0
+Camera       eye=100;-300;5 lookat=-130.0;-333.0;5 delay=0
+
+Audio         track=9
+AmbiantColor  air=180;180;102;102 water=20;20;20;20
+FogColor      air=10;10;0;0 water=0;0;0;0
+VehicleColor  color=228;226;196;0
+GreeneryColor color=117;158;64;0
+InsectColor   color=200;164;83;0
+DeepView air=100.00 water=25.00
+FogStart air=0.2 water=0.1
+SecondTexture rank=8
+Background    image="%user%\sky02.bmp"
+WaterColor    color=-0.6;-0.1;-0.1
+MapColor      floor=71;82;53 water=124;205;225
+
+CreateLight dir= 0.0;-1.0; 0.0 color= 0.63; 0.63; 0.63 type=Terrain
+CreateLight dir= 1.0; 0.0;-1.0 color=-0.70;-0.70;-0.70 type=Terrain
+CreateLight dir=-1.0; 0.0; 1.0 color= 1.40; 1.40; 1.40 type=Terrain
+CreateLight dir=-1.0;-1.0; 1.0 color= 0.56; 0.56; 0.56 type=Object
+CreateLight dir= 1.0;-1.0; 1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir=-1.0;-1.0;-1.0 color= 0.32; 0.32; 0.32 type=Object
+CreateLight dir= 1.0;-1.0;-1.0 color= 0.16; 0.16; 0.16 type=Object
+
+Planet         pos=0.00;0.70 dim=0.04 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=1.20;0.40 dim=0.05 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=2.50;0.50 dim=0.08 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=3.85;0.30 dim=0.09 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+Planet         pos=4.10;0.50 dim=0.05 image="effect01.tga" uv1=0.00;0.50 uv2=0.25;0.75
+
+TerrainGenerate     vision=250.00 depth=1 slope=3.0 hard=0.3
+TerrainWind         speed=-2.0;0.0
+TerrainRelief       image="%user%\map02.bmp" factor=1.0
+TerrainResource     image="%user%\res02.bmp"
+TerrainWater        image="water12.tga" level=25.0 moveX=1.0 moveY=0.5 color=10;10;10;10 brightness=0.1
+
+TerrainMaterial id=1 image="roca2" u=0.00 v=0.00 up=1 down=1 left=1 right=1 hard=0.8
+TerrainMaterial      image="roca2" u=0.25 v=0.00 up=2 down=1 left=1 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.50 v=0.00 up=1 down=1 left=1 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.75 v=0.00 up=2 down=1 left=1 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.00 v=0.25 up=1 down=2 left=1 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.25 v=0.25 up=2 down=2 left=1 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.50 v=0.25 up=1 down=2 left=1 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.75 v=0.25 up=2 down=2 left=1 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.00 v=0.50 up=1 down=1 left=2 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.25 v=0.50 up=2 down=1 left=2 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.50 v=0.50 up=1 down=1 left=2 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.75 v=0.50 up=2 down=1 left=2 right=2 hard=0.6
+TerrainMaterial      image="roca2" u=0.00 v=0.75 up=1 down=2 left=2 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.25 v=0.75 up=2 down=2 left=2 right=1 hard=0.6
+TerrainMaterial      image="roca2" u=0.50 v=0.75 up=1 down=2 left=2 right=2 hard=0.6
+TerrainMaterial id=2 image="roca2" u=0.75 v=0.75 up=2 down=2 left=2 right=2 hard=0.3
+
+TerrainMaterial id=3 image="rocb2" u=0.00 v=0.00 up=1 down=1 left=1 right=1 hard=0.8
+TerrainMaterial      image="rocb2" u=0.25 v=0.00 up=3 down=1 left=1 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.50 v=0.00 up=1 down=1 left=1 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.75 v=0.00 up=3 down=1 left=1 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.00 v=0.25 up=1 down=3 left=1 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.25 v=0.25 up=3 down=3 left=1 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.50 v=0.25 up=1 down=3 left=1 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.75 v=0.25 up=3 down=3 left=1 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.00 v=0.50 up=1 down=1 left=3 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.25 v=0.50 up=3 down=1 left=3 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.50 v=0.50 up=1 down=1 left=3 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.75 v=0.50 up=3 down=1 left=3 right=3 hard=0.4
+TerrainMaterial      image="rocb2" u=0.00 v=0.75 up=1 down=3 left=3 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.25 v=0.75 up=3 down=3 left=3 right=1 hard=0.4
+TerrainMaterial      image="rocb2" u=0.50 v=0.75 up=1 down=3 left=3 right=3 hard=0.4
+TerrainMaterial id=4 image="rocb2" u=0.75 v=0.75 up=3 down=3 left=3 right=3 hard=0.0
+
+TerrainInit     id=3
+TerrainLevel    id=1 min= 0.0 max=99.0 slope=0.0 freq= 25.0  // roc1
+TerrainLevel    id=2 min=25.0 max=50.0 slope=3.0 freq= 70.0  // grass
+TerrainLevel    id=4 min=35.5 max=45.0 slope=9.0 freq= 80.0  // snow
+TerrainLevel    id=4 min=50.5 max=99.0 slope=9.0 freq= 40.0  // snow
+TerrainLevel    id=2 min=25.0 max=45.0 slope=9.0 freq= 90.0  // grass
+
+TerrainCreate
+
+BeginObject
+CreateObject pos=-130.0;-330.0 dir=1.0 type=SpaceShip run=0
+
+CreateObject pos=-7;57 dir=0.8 type=Me
+CreateObject pos=-1;43.2 dir=1.2 type=TrackedGrabber power=1.0 script1="%user%\chargetowers.txt"
+CreateObject pos=-5;39.4 dir=1.4 type=TrackedGrabber power=1.0 script1="%user%\chargetowers.txt"
+CreateObject pos=-9.5;36.6 dir=1.5 type=WingedGrabber power=1.0
+CreateObject pos=19.4;68.39 dir=0.8 type=DefenseTower
+CreateObject pos=16;68.2 dir=1.0 type=PowerCell
+CreateObject pos=-117.67;49.40 dir=0.2 type=DefenseTower
+CreateObject pos=-112.9;41.6 dir=1.0 type=PowerCell
+
+CreateObject pos=-66.18;29.93 dir=0.3 type=WingedShooter power=1.0 script1="%user%\asentry.txt"
+CreateObject pos=-69.4;28.1 dir=0.4 type=WingedShooter power=1.0 script1="%user%\asentry.txt"
+CreateObject pos=-73.93;26.62 dir=0.5 type=WingedShooter power=1.0 script1="%user%\asentry.txt"
+CreateObject pos=-78.69;21.77 dir=0.6 type=WingedShooter power=1.0 script1="%user%\asentry.txt"
+
+CreateObject pos=-16;30 dir=1.5 type=Derrick
+CreateObject pos=-23;45 dir=0.7 type=Converter
+CreateObject pos=-67;45 dir=0.2 type=PowerStation
+CreateObject pos=-39;12 dir=1.6 type=BotFactory
+CreateObject pos=-78;40 dir=0.1 type=RepairCenter
+CreateObject pos=-13;-34 type=RadarStation
+
+CreateObject pos=-3;50 type=RedFlag
+
+CreateObject pos=-2;50.5 dir=1.0 type=Titanium
+CreateObject pos=-2.3;52.5 dir=0.8 type=Titanium
+CreateObject pos=-1.8;47.3 dir=1.5 type=Titanium
+CreateObject pos=-2.2;49.1 dir=0.3 type=Titanium
+
+CreateObject pos=-73.2;47.5 type=PowerCell
+CreateObject pos=-73.4;44.4 type=PowerCell
+CreateObject pos=-70.25;45.4 type=PowerCell
+CreateObject pos=-67.7;49.6 type=PowerCell
+CreateObject pos=-70.1;50.5 type=PowerCell
+CreateObject pos=-75.4;43.8 type=PowerCell
+CreateObject pos=-75.4;45.8 type=PowerCell
+
+CreateObject pos=350;350 type=AlienNest
+
+CreateObject pos=-80.8;-317 dir=0.3 type=RuinBotFactory
+CreateObject pos=196.0;340.0 type=AlienWorm script1="%user%\worm02.txt" run=1
+
+CreateObject pos=-221;166 type=UraniumSpot
+CreateObject pos=-181;206 type=UraniumSpot
+
+EnableBuild type=Derrick
+EnableBuild type=BotFactory
+EnableBuild type=Converter
+EnableBuild type=RepairCenter
+EnableBuild type=DefenseTower
+EnableBuild type=ResearchCenter
+EnableBuild type=RadarStation
+EnableBuild type=ExchangePost
+EnableBuild type=AutoLab
+EnableBuild type=NuclearPlant
+EnableBuild type=PowerCaptor
+EnableBuild type=FlatGround
+EnableBuild type=Flag
+
+EnableResearch type=WINGER
+EnableResearch type=TRACKER
+EnableResearch type=THUMPER
+EnableResearch type=SHOOTER
+EnableResearch type=TOWER
+EnableResearch type=PHAZER
+EnableResearch type=SHIELDER
+EnableResearch type=ATOMIC
+EnableResearch type=SNIFFER
+EnableResearch type=SUBBER
+EnableResearch type=RECYCLER
+
+DoneResearch type=WINGER
+DoneResearch type=TRACKER
+DoneResearch type=THUMPER
+DoneResearch type=SHOOTER
+DoneResearch type=TOWER
+DoneResearch type=PHAZER
+DoneResearch type=SHIELDER
+DoneResearch type=ATOMIC
+DoneResearch type=SNIFFER
+DoneResearch type=SUBBER
+DoneResearch type=RECYCLER
+
+NewScript name="%user%\asentry.txt" type=WingedShooter
+NewScript name="%user%\asentry.txt" type=WheeledShooter
+NewScript name="%user%\asentry.txt" type=TrackedShooter
+NewScript name="%user%\asentry.txt" type=LeggedShooter
+NewScript name="%user%\psentry.txt" type=PhazerShooter
+
+EndMissionTake pos=0.0;0.0 dist=25000.00 type=Me lost=0
+EndMissionTake pos=0.0;0.0 dist=25000.0 type=NuclearCell min=5
+EndMissionTake pos=0.0;0.0 dist=25000.0 type=Derrick min=2
+EndMissionTake pos=0.0;0.0 dist=25000.0 type=NuclearPlant min=1
+EndMissionTake pos=0.0;0.0 dist=25000.0 type=Converter min=1
+EndMissionTake pos=-130.0;-330.0 dist=30.0 type=OrgaMatter min=1
+

@@ -1,0 +1,15 @@
+\b;Walkthrough
+Titanium can be found in the same locations as in the first mission; and, of course, you still have one functioning derrick as the mission begins.
+
+You will be unable to build new power plants or power stations during this mission.  Your one existing power station will function throughout the mission, but if you run out of batteries you cannot create more.
+
+Because of this constraint, you will have to search for uranium.  There are two small deposits in the marshy areas of the river's north-west fork: look for places where you can walk but still get your feet wet.  You will probably need to use a sniffer.
+
+More immediately, though, you can expect attacks throughout the night.  Before beginning your search for uranium, tighten your defenses: build a network of defensive towers or prepare sentry robots to keep your facilities secure.  Do not try to search for uranium or organic material until you have withstood several assaults and are confident of your security.
+
+The aliens are smarter this time; you will find them harder to decoy.  You can expect the aliens to operate in small groups, and to try overwhelming you with synchronized attacks.  Make sure your defenses are capable of handling multiple simultaneous attackers.  The defensive programs provided by Misison Control will help a little, but will not be enough to save the day.  Or the night.
+
+One possible hint: the aliens quickly discover that a phazer shooter has better range than they do.  Keep phazer shooters nearby, and the aliens will be a little more cautious about approaching until they are sure they have overwhelming force.
+
+\t;See also
+\l;Controls\u command;

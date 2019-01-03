@@ -1,0 +1,17 @@
+\b;From Mission Control
+Congratulations on finishing your initial survey of Elysium.  Based on your reports, Mission Control is even more excited about this planet than ever.
+
+With nightfall, the mist that interfered with your flying apparatus appears to have settled.  Unfortunately, the loss of daylight means your solar collectors will stop functioning soon.  If your earlier encounter with the natives is typical, you probably don't want to be without power for long.
+
+For the time being, you still have one functioning solar collector.  While it lasts, you need to search for a source of uranium to help you make it through the night.  The satellite has had some success in its search; read the latest report for the details.  By our estimates, you'll need to manufacture at least five nuclear cells--and guard your buildings so you can make more indefinitely--in order to survive the night and complete this mission.
+
+One last thing.  Our scientists were fascinated by your reports of the natives, and would love a sample of their organic material to analyze.  Find a sample and bring it back to your space ship for safekeeping.
+
+As usual, keep your guard up: watch your radar and maintain your defenses.  On Earth, many of the most vicious predators hunt at night; Elysium life forms may do the same.
+
+For what it's worth, scientists studying your reports have suggested that the natives are showing enough intelligence to learn from their earlier errors. You can expect the local life-forms to be more difficult to defeat in the future.
+
+\key;\key help;\norm; allows you to review these instructions at all times on your personal SatCom \button 63;.
+
+\t;See also
+\l;Controls\u command; and \l;CBOT Language\u cbot;

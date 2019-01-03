@@ -1,0 +1,100 @@
+extern void object::WanderingSentry()
+{
+   int foes[40];
+
+   int ii = 0;
+   foes[ii++]=WheeledGrabber;      foes[ii++]=TrackedGrabber;      foes[ii++]=WingedGrabber;      foes[ii++]=LeggedGrabber;
+   foes[ii++]=WheeledShooter;      foes[ii++]=TrackedShooter;      foes[ii++]=WingedShooter;      foes[ii++]=LeggedShooter;
+   foes[ii++]=WheeledSniffer;      foes[ii++]=TrackedSniffer;      foes[ii++]=WingedSniffer;      foes[ii++]=LeggedSniffer;
+   foes[ii++]=WheeledOrgaShooter;  foes[ii++]=TrackedOrgaShooter;  foes[ii++]=WingedOrgaShooter;  foes[ii++]=LeggedOrgaShooter;
+   foes[ii++]=Thumper;             foes[ii++]=PhazerShooter;       foes[ii++]=Recycler;           foes[ii++]=Shielder;
+   foes[ii++]=Subber;              foes[ii++]=Me;
+
+   foes[ii++]=Derrick;      foes[ii++]=BotFactory;    foes[ii++]=PowerStation;   foes[ii++]=Converter;
+   foes[ii++]=RepairCenter; foes[ii++]=DefenseTower;  foes[ii++]=ResearchCenter; foes[ii++]=RadarStation;
+   foes[ii++]=ExchangePost; foes[ii++]=PowerPlant;    foes[ii++]=AutoLab;        foes[ii++]=NuclearPlant;
+
+   point home = position;
+   point tgt = home;
+
+   int change = 0;
+
+   while (true) {
+
+      object baddie = radar (foes, 0, 360, 0, 190);
+      if (baddie != null) {
+
+         point flat = baddie.position;  flat.z = position.z;
+         float dd = distance (flat, position);
+         if ((dd > 0) && (dd < 45)) {
+            aim (atan ((baddie.position.z - position.z) / dd) - pitch);
+            fire (baddie.position);
+         }
+
+         motorat (baddie.position);
+
+      } else {
+
+         if (distance (position, home) > 100) {
+            tgt = home;
+         } else if (abstime() > change) {
+            tgt.x = home.x + (rand()*200)-100;
+            tgt.y = home.y + (rand()*200)-100;
+            tgt.z = topo (tgt);
+            change = abstime() + 10 + rand()*5;
+         }
+
+         motorat (tgt);
+
+      }
+   }
+}
+
+
+point object::scaleto (point tgt, float offset)
+{
+	float dist = distance (position, tgt);
+	
+	if (dist == 0)
+	    dist = 0.1;
+	
+	point go;
+	go.x = position.x + offset * (tgt.x - position.x) / dist;
+	go.y = position.y + offset * (tgt.y - position.y) / dist;
+	go.z = topo(go);
+	
+	return go;
+}
+
+
+void object::motorat (point tgt)
+{
+	float dist = distance (position, tgt);
+	float ang = direction (tgt);
+	point next = scaleto (tgt, 2);
+	
+	float scale = 1;
+	if (abs(ang) < 90)
+	{
+		if (dist < 3)
+		    scale = 0.1;
+		else if (dist < 5)
+		    scale = 0.2;
+		else if (dist < 10)
+		    scale = 0.5;
+		if (next.z < 1)   // don't go underwater!
+		    scale = -0.2;
+	}
+	   
+	if (ang > 10)
+	    motor (-1, 1);
+	else if (ang < -10)
+	    motor (1, -1);
+	else if (ang > 1)
+	    motor (scale*3/4, scale);
+	else if (ang < -1)
+	    motor (scale, scale*3/4);
+	else
+	    motor (scale, scale);
+}
+
